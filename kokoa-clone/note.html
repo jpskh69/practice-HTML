@@ -1,0 +1,1388 @@
+<!--
+웹사이트는 텍스트로 이루어져 있음 단지 문자일뿐임! -> 막써도 스크린에보임!
+브라우저는 오류가 없음 = 규칙을 따르지 않더라도 작성한걸 보여줌.
+브라우저는 html의 파일이 에러가 있다고 말해주지 않음 = 언제나 컨텐츠를 보여줌
+이건 이점이자, 단점임. 브라우저는 컨텐츠를 보여줌.
+
+
+<태그>를 열고 안에 내용을 넣고</태그>를 닫음
+이게 여기서부터여까지가 '태그'라는 것을 알려줌
+태그의 이름을 아무렇게 해두됨 누가 뭐라고 하지않음! 브라우저가 이해못할뿐임~
+
+그래서 우리는 브라우저가 이해하는 언어로 이야기를 해줘야함!
+그게 바로 HTML의 언어임. 
+html언어의 목적은 브라우저에게 이야기 해주는 것! 웹사이트에 무엇이있고 어떤 것인지!
+
+ex)
+<nameofthetag>lalalalallal</nameofthetag> 
+: 똑같이 앞뒤로 써주고 뒤 태그에 "/"를 추가! 하면 닫게됨! 그게 닫는법임! 
+<p> : 태그안에 태그 넣기 가능.
+    <mark>thing</mark> : mark로 열면 mark로 닫기!
+</p>
+열린 순서에 맞게 닫아줘야함.
+<p>
+    <mark>thing
+</p>
+hello
+</mark> : 이럼 안됨!! 고장난거임...
+
+------
+태그는 attribute가 있으면 더욱 강력해짐!
+ex) <saram name="Soo"></saram>: 여기서 name이 attributes(속성)임
+
+<tagname attribute ="attribute value"></tagname> 작성방법
+주의!!
+attribute갑을 넣을때 ""를 꼭 닫아줘야함! "로 시작했음 "로 닫아줘야함!
+그리고 ""나 ''나 ``가 있는데 항상 attribute에는 ("") 쓰기!!
+항상 큰따옴표("")쓰기.. 나제다이..?
+
+그리고 어떤 attribute는 모든 태그가사용할수있고 ex. id=""
+일부 attribute는 특정 태그만 가능함! ex. <input type=""/>
+
+여러가지 태그 알아보기 
+
+<ul> : unoder list = 순서가 없는 목차 => <ol> :oder list = 순서가 있는 목차
+    브라우저는 똑똑하지 않음. 그래서 이것이 리스트 라는 것은 암!
+    하지만 리스트안에 이 내용들이 '무엇'인지 모름. 별개임!
+    <li>해서 이태그로</li> : list item이 라는 태그임! 목록요소
+    <li>이 안에있는 것이 리스트야!</li>
+    <li>라고 알려주는 태그임!</li>
+</ul> : 태그 동시수정 = 태그에 마우스 클릭 ctrl + d 하면됨 우와!!
+
+<a></a> :  anchor= 돛 = link = 다른 웹사이트로 이동하는 태그
+<a>Go to google.com</a> : 클릭하여 다른 곳으로 이동 하기위해서는 부가적인 정보 필요
+'어디로'가는지 알려줘야함 tag에 추가하는 부가적인 정보를 attributes(속성)이라고 함
+모든 태그들이 h1태그처럼 명확한 것은 아니기때문임!
+
+그래서 필요한 속성중 하나가 href = HTTP reference or hyperlink reference
+이동할 곳을 랄려주는 것임.
+<a href = "http://google.com">Go to google.com</a>
+
+여기서! 속성은 아무태그에  추가해도 되는거야? = 당욘함 아무렇게해도 브라우저에게 영향 X
+h1에는 그런 속성이 없기 때문임. 아무렇게 작성 OK 걍 브라우저가 이해X
+그럼 h1태그에 href를 추가하면? => 작동이 안됌 이속성은 <a></a>태그에만 추가할수 있음!
+
+문법 작성할때 유의해야할 것~ 띄어쓰기 태그의 이름 적고 띄어쓰기하고 속성 써줌!
+다른 a 태그의 속성 알아보기! target ! 이 속성의 기본 값은 "_self"!
+<a href = "http://google.com" target ="_blank">Go to google.com</a>
+: "_self"을 "_blank"로 바꿔보면 신기함! = 이 것은 속성의 능력중 하나의 예시일 뿐!
+수많은 태그들은 수많은 속성들이 있고 어떤 것은 공통으로 사용하고 그렇지 않을수 있음.
+
+<img /> : 이미지는 닫는 태그가 없음. 
+이 태그는 "self-closing tag"(자체닫기 태그) 이기때문임!
+이미지는 content가 없음 = 텍스트가 X!, img의 콘텐츠는 src속성 자체이기때문임!
+img 태그 할때 빠지면 안돼는 중요 속성 "src"! 이 속성이 이미지를 넣기 때문임
+
+즉, 태그와 태그사이에 내용을 넣는 것이아니라 (= 텍스트X 안에 내용X)
+속성을 이용해서 정보를 나타내는 태그들이 기본적으로 "self-closing tag" 라는것임
+
+<img 
+    src="이미지주소 넣어보셈요" 
+/> : 데에엠 지쟈스 ㅋ 
+우리가 알던 태그의 방식이 아님 이는 img의 attributes src가 img의 content임!!
+src 는 오로지 img에서만 작동하는 속성임 꼭 이미지 주소일 필요 X 파일명 O (확장자명도 완전히 똑같이 입력해야함.)
+만약 이미지가 다른 폴더에 있을 시, 작동X  -> img/(폴더안에)logo.jpg(파일)
+
+
+
+페이지 만들어보기.
+
+HTML 문서(documenet)에는 구조를 작성하는 방법이 있음!
+따라야하는 형태! 룰!  
+
+<!DOCTYPE html> : 첫 번째 모든 html의 시작 라인임! 필수! 특별한 경우로 태그를 닫아줄 필요 X
+이코드는 브라우저에게 이건 단순한 text파일이 아닌, html의 문서라고 알려주는 것임!
+<html lang="en"> : 두 번째로 html의 태그 열기
+    여기 안에 들어가는 모든 코드가 html이되는 것임!
+
+    웹사이트에는 두 가지의 구성으로 되어있음. head와 body
+    head 파트에서는 웹사이트의 환경을 설정, 외부적으로 보여지지 않는 설정을 해줌.
+    body 파트는 사용자가 볼 수 있는 content를 보여줌
+    <head> : 페이지에 관한 환경 설정
+        <title>Home</tile> : 일반태그와 같이 사용 열고 내용입력 닫고! 홈페이지이름!
+        새로고침하여 페이즈를 보면 tab의 이름창이 바껴져있음! 검색엔진에 걸릴 이름임.
+        
+        만약, 태그밖에서 솰라솰라 말을 붙이면 나중에 CSS와 JS결합때는 적용X 문제가 생김.
+        하지만 html에서는 문제가 없는것처럼보임 왜냐! 브라우저는 그대로 출력만해줄뿐이기때문에!
+        
+        또한 head 태크 안에 있는 모든 태그들은 보여지지 않음. 태그밖에 글자는 출력됨!
+        =>브라우저가 이해하는 실존 동작되는 html 코드들은 안보여짐
+            즉, 브라우저 화면상에 보여질 내용들은 모두 body태그에 있어야함!
+        
+        <meta> : meta 는 부가적인 정보라는 뜻임.
+        meta 태그는 구글 검색에서 보여지는 description(묘사, 설명),
+        표현할수 없는 다양한 종류의 메타데이터를 나타냄.
+        이 태그는 'content'와 'name'이라는 두 종류의 속성을 가지고 있음.
+        <meta name ="description" content="This is web" />
+        이 중 content에 들어가는 description가 가장 중요함! 왜냐 검색엔진에 걸리기때문임.
+        
+        또, <meta charset="UTF-8" /> 이 meta 태그는 되게 중요함!
+        이 것은 브라우저가 text를 어떻게 그려달라는지 말해주는 것임. 언어 설정!
+        가끔 한글이나 다른 특수문자 등을 입력시 브라우저가 이해 못 할때가 있음.
+        그래서 이 태그가 없으면 글자가 깨짐. 그러니 잊지말고 항상넣기!!!
+        (그리고 meta태그들은 self-closing 태그임!ㅋㅋ)
+
+        잠깐! html 에 lang="en" 이란  속성이 들어가있는데, 이는 검색엔진들에게 도움을 주기위함.
+        우리사이트에서 사용되는 언어가 무엇인지 알려줌. 주된언어가 무엇인지!
+
+        지금까지 하는 작업들은 사이트의 정보를 브라우저에게 알려주는 용도임!!
+        최대한 명확하게 우리의 웹사이트가 무엇인지에 대해 알려주는 것 이라는거 유념하기!
+        검색엔진이 이해할수 있게 정리해서 '말 하는 중!'
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        = 인터넷 익스플로어를 위한 태그! 
+
+        가장 중요한건 검색엔진에 걸리는 title과 description 인듯 (검색에 중요 비중이라네 ㅋ)
+
+        <link 
+            rel="shortcut icon"
+            sizes="16x16 32x32 64x64" : 있어두되고 없어도되는...
+            href = "이미지 주소" : img에서 사용했던 속성.
+        /> 
+        해드에 넣으면 와 해보면 암 개싱긔함.
+
+        다시 요약,
+        보이지 않는 태그들로 사이트를 설정해주는 head!
+        브라우저에게 사이트가 어떻게 보여지는지, 구글이 어떻게 사이트를 바라보는지!
+        이 모든것이  head 태그에!!
+
+        + 예시 연습
+        노마더 meta에 property="og:title" 이 뭔지 훑어보기.                               =>카톡에 공유되어 보여지는 이미지
+        
+        metas는 사이트의 부가적인 정보를 입력해주며 매우 강력함.
+        
+        
+        
+
+
+        다양한 태그들을 외우는 것은 힘듬... 외우지말고
+        검색을 활용! 검색시 뒤에 'mdn'이라는 키워드를 붙이는 것을 추천!
+        "Mozilla developer Network" 로 안내해준다네요 하하하 이사이트 쓰는 것을 추천!
+
+        ex) 태그 여러개 써보까나
+
+        <abbr title ="약칭의 의미를 적어주고">약어는 content</abbr>
+        -> 마우스 가져다대면 약칭의 의미가 뜸. 호옹 싱기방기뿡뿡방기
+        
+        <p>I like to live in <mark>hengsin</mark></p>
+        <mark></mark> : 형광팬 같은 태그네 ㅋㅋ
+        <sup></sup>, <sub></sub> :ㅋㅋ 제곱해줄때 좋은듯
+        <audio : 오디오 플레이 
+        controls > 값을 줘도되고 안줘도 작동함 "true = enabled"
+        autoplay
+        src="주소나 파일명" /> 해두되고 
+        </audio> 해두됨.
+
+        <dialog open> : 오 ㅋ 중앙에 왠 상자와 글생김 싱기방기22 
+            <p> All!</p>
+        </dialog> : 이렇게 몇개는 못생김 (이렇케 태그안에 태그를 넣을 수 있음.)
+
+        등이 html의 tag임.
+        모든 태그와 attribute였음 구지 암기 하지 않아두됨
+        "태그가 어떻게 작성하는지"만 기억하면됨!
+        그럼 태그 검색
+   
+    </head>
+    <body> : 화면에 보여지는 내용물
+        예시 : 
+        -------
+
+        form 태그! 와 다양한 속성들!! 아주 중요하고 자주사용되는 듯 합니다.
+       
+        <form>
+             form의 양식대로 작성해주기. 양식 중 제일 중요한 태그는 'input' 태그!
+             <input /> : 싱글태그로 닫아주기. 이 태그에서 사용가능한 속성 확인!
+             
+             <input required placehloder="ID" type="text" />
+             <input required placehloder="Password" type="password minlength="10" />
+             <input type="submit" value="버튼안에 내용 값" /> 
+             : 버트을 누를 시 form을 어디론가 보내주는 일을함. 
+             현재 보내줄 곳이 없기때문에 계속 새로고침함. form뭐할지 몰라서!
+             (아나 ㅋㅋ 그래서 구나~~~ 헤에~~~)
+             <input type="submit" disabled />는 버튼일경우 클릭 하지못하게 막음!
+             
+             required 라는 attribute만을 추가해서 form을 검증(validation) 할 수 있음.
+             (이게 무슨 말이고 ㅋ 싶은데.., 대략 빈칸방지용기능을 html자체기능으로 사용할수있다?)
+             
+             minlength : 최소 길이 제한 알려주는 것 같음.
+             정확한 위치에 올바른 코드를 작성해서 가능한 거임!
+             이렇게 제대로 작성해야 브라우저가 이해해줌.
+
+             <input type = "file" accept=".png"/> : 업로드 할 파일 선택가능
+             근데 타입이 file 경우에만 쓸수 있는 attribute가 있음 accept!!
+             제한을 줄수 있는 기능! 모든이미지 파일 > "image/*""
+
+             다시한번 강조해서 말하네!
+             tag안에 어떠한 attribute를 아무거나 지어서든 작성해두됨!
+             브라우저는 어떠한 오류도 보여주지 않음. 단지 브라우저가 이해를 못 할 뿐임!
+             태그 작성하는 법과 attribute를 찾는것 attribute를 어떻게 사용하는지만 알면됨!
+             
+             <tagname attribute ="attribute value">이사이에 원하는 content 입력</tagname>
+
+             이렇게 attribute에 값을 입력할때도 있지만, (만약 required 처럼) 
+             오로지 'true'나 'false'만 있는 경우 값을 넣지않고 그대로 입력해두됨!
+             
+             
+             
+             
+             더 나은 form 만들기
+
+             <lable>Profile Photo</lable> : 질문과 체크박스 할수 있는 태그 우왕!!!
+             이 태그는 input 태그와 함께여야 작동이 됨! 사용법은 매우 간단함.
+
+             <lable for="profile"></lable> for 이라는 attribute를 적어줌!
+             <input id="profile" /> : input의 id의 이름과 for의 이름이 같아야함!
+             그러면 'Profile Photo'을 누르면 for과 같은 값을 가진 id를 들고있는 input을 작동시켜줌!
+             (동시입력 alt+원하는 곳 클릭, 클릭/ 벨류에는 공백입력X 'first-name')
+            
+             ex)
+             <lable for="website">Website</lable>
+             <input id="website" required type="url" /> 
+             
+             : email이라는 type도 있음! range, date.. 와우 대박임 ㅋ
+             
+             <input type ="submit" value="입력" />
+            버튼을 눌러보면 url을 입력하라고하고, 일반 텍스트를 입력해도 마찬가지임!
+            여러가지 타입해보면서 경험해보기~ 나중에~ 
+
+            
+            여기서 중요한건 id! attribute임! 중요함~! id는 고유해야함!!!!
+            id는 body 안에 어떤 태크에든 어디에서든 쓸수 있는 attribute임!
+            id = unique identifier (고유식별자) 이기때문에 어디에서든 사용가능함!
+            하지만, element당 하나의 id만 가질수 있음 중복XXX 고장남!!
+            태그는 하나의 id만을 가진다!!!!
+            스크립트나 CSS에서 식별하려는 목적으로 가진 것이 바로 id라는 attribute!       
+            
+            뭐 아이디를 여러개 줄수도 있지만, 한다면 올바른 위치에 제대로 작성하기!
+            태그가 attribute와 같이 쓰인다면 얼마나 강력한지, 사용법만 알면 완전 강력크함!
+
+
+
+            의미가 있는 태그와 의미가 없는 태그!
+
+            html에서 의미가 없는 태그 <div></div>! (div = divisiton)
+            이것을 박스라고 생각하 것이 좋음. 그런데 이 박스는 양옆에 다른 박스를 둘수 없음.
+            <div>:컨텐트 분할 요소..?
+                <input required placehloder="ID" type="text" />
+            </div>
+            <div>
+                <input required placehloder="Password" type="password />
+            </div>
+            예시로 이 태그는 아무의미가 없다는 것을 알수 있음
+            의미론적으로 봤을때 document에는 아무런 값도 없는 box임!
+            box의 자체 기능은존재함!(div 태그는 가장 통요적인 box container임)
+
+            div와 같은 태그들이 더 있고, 또한 div를 대체하는 태그들도 있음.
+            이 대체하는 코드들은 코드 자체로 의미가 부여되어있있는 태그임!
+            (눈으로 보면 한번에 이해된다는 뜻!)
+
+            문서를 보기만해도 그의미를 짐작할 수 있는 것을 semantic 라고하는데
+            프로그래머들이 보기만해도 알수있는 태그들이 이와 같은 경우임.
+
+            <header> : head와는 다름!!! head는 보이지않고 <header>는 body안에 포함되어 있음!
+                이 태그는 div를 대체함! 동일하게 박스의 기능!
+                <h1>The Times</h1>
+            </header>
+            이 태그를 보기만해도 우리는 이 것이 웹사이트의 헤더라는것을 한 눈에 알수있음.
+            
+            이 것이 <div></div>와의 차이점임. div로 하려면 아이디 부여해야함!
+            ex) <div id="header"></div>
+                <div id="main"></div>예전이 이렇게 많이 씀.
+            그러나 이렇게 모두가 div태그이면 id를 부여하기전까지 뭐가 뭔지 파악하기 어려움이 있음.
+
+            그래서 이렇게 다른 사람이 코드만보고 어떤의민지 파악하기 좋은,
+            무슨의미인지 짐작이 가능한 태그들이 있다!
+            
+            <main> : 이런태그들은 전부 container 임! 그리고 다 div로 대체 가능
+                <p>hello!</p> :문단 text 태그
+            </main>
+            <footer>:꼬릿말 태그 왘ㅋㅋ 개신기함
+                &copy: 2022 N.C
+            </footer>
+            구글- 'html elemenet mdn' 검색 content sectioning 태그 표에 다양하게 있음 
+
+            기능의미는 없지만 이렇게 눈으로 봤을때 읽는것으로 의미를 한 번에 파악이됨!
+            이해가 빨라지고 좋음!이런 태그들이 semantic태그임!(container) 
+            document와 content를 명확하게 묘사 될수 있도록 코드를 semantic하게 작성하기~!
+            
+            그래서 non-semantic 태그는 의미가 없는 태그라고 생각하면됨!
+            그 예로! 의미없는 box = div도 있고 'span'도 있음!
+            (container에 해당되는 이 태그들은 다 div태그로 대체할수있음!!) 
+            
+            <span>hello!</span> : 짧은 text를 위한 태그임
+            대체하는걸로 <address></address> 이런것도 있음!
+            <nav></nav> : navigation,<sideber></sideber>,<aside></aside> 등등
+        
+            되도록이면 이해하기 쉬운 html문서를 만드는 것이좋음.
+
+            +속성은 항상 큰따옴표를 사용하기!
+
+            
+        </form>
+    </body>
+</html>
+
+-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    css 와 html의 결합 방법! 사용방법은 크게 두가지가있음
+    첫번째, head 태그 안에 <style></style>를 작성해주는 것! 같이두기!
+    
+    두번째, css파일을 따로 만들어 분리시키고 연결하는 방법임!
+    <link href="styles note.css" rel ="stylesheet" />
+    : link 태그를이용해서 파일 연결! 무슨파일 연결? href="이파일"
+    그리고 styles.css와 HTML과의 관계를 말해줘야함! rel ="stylesheet" 관계명시!
+
+
+    <style></style>
+    :이 태그는head안에 있어야함!! body전에 와야함
+
+    head>
+    <style>
+        css 작성법! 태그를 선택! {}에 "속성: 속성의값;(세미콜론)"
+        ;(세미콜론)으로 속성들을 나열할수 있음! 반드시 끝에 붙여줘야함!
+        안그럼 적용 XXX!
+        
+        속성쓸때 띄어쓰기가 없음! font-style,font-siz등 존재하지X
+
+        속성마다 단위가를 쓰는데, color에 써도 오류가 안뜸 적용이 안될뿐임!
+        
+        h1 {
+            color : yellow;
+            font-style: italic;
+            font-size: 50px;
+        }
+        CSS의 이름을 보면 C =cascading = 위에서부터 아래로 차례로 적용!!
+        브라우저가 css코드를 읽을 때, 위에있는 코드부터 차례차례로 읽는다는 것임!
+        그래서 마지막에 실행되는 최종 코드를 화면에 보여줌!
+
+        위의 태그의 순서를 보자! style 태그가 link보다 아래에 와있음!
+        만약, 이 두 css에서 같은 대상을 가르키고 각각 다른색을 부여한다면 무엇이 적용?
+
+        이름의 유래를 잘생각해본다면 알수 있음!
+        가장 마지막에 있는 코드를 적용시켜서 보여줌!
+
+        즉, 코드순서의 결과가 영향을 미친다!! 위에서부터 아래적용! 최종은 아래코드!
+        반대로, link 태그와 style 태그의 위치를 바꾸면 아래인 link가 적용되는 걸 알 수 있음!
+
+
+        box는 css에서 가장 중요함! 왜냐면 웹페이지는 작은 box들의 큰 box임!
+        HTML을 배울때 가장 기본적인 종류의 box가 있었음! 
+        바로 div!!!!
+
+        div {
+            height: 150px;
+            width: 150px;
+            background-color: tomato;
+
+        }
+        span {
+            display : block;
+            background-color: turquoise;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Hello!</h1>
+    <div></div> : box 옆에는 다른 box가 올 수 없음!! header,main,footer 든!!
+    <div></div>
+    <div></div>
+    <span>hello</span> : 하지만 얘는 다름 옆에 다른 span(요소가)이 올수 있음!
+    <span>hello</span>
+    <a herf="#">link</a> : 링크도 span 옆에 위치 할 수 있음
+    (# = 빈 링크)
+    <span>hello</span>
+    <img src="이미지주소 or 이름.확장자" /> : 얘도 바로옆으로 올수 있음
+    <span>hello</span>
+    <span>hello</span>
+    <p>
+        얍얍 얘는 옆에 아무것도 올수 없슴다!
+    </p>
+    
+    이렇게 두 종류의 형태가 있음!!!
+    하나는 box처럼 옆에 아무것도 올수 없는 형태! (= block !!)
+    다른종류는 하나의 요소 옆에 다른 요소가 올수 있음!(= inline!! = 같은 줄에 위치 할수 있다!)
+    
+    inline은 아주 작은 글이나 링크, 그림 등등이 속함! 해당하는게 별로 없음.
+    따라서 대부분의 box들은 block 임!! 옆에 아무 것도 올 수 없음!
+    header가 block지! 몇개가 있든 address도 block임!(싱기방기 뿡뿡방기)
+    그래서 block가 아닌 것을 기억하는게 빠름!
+    대표적으로  "span, a, img" 가 있음!!
+
+    block만 가지고 있는 특징!! 
+
+    block을 inline으로 inline을 block으로 바꿀순 없을까? 
+    가능함!! 'display' 라는 속성으로!
+    span은 기본적으로  display : inline; = 디폴트 값.
+    그럼 div의 display을 inlne으로 바꾸면? 사라짐!!
+    inline은 높이와 너비를 가질수 없음! 그래서 div가 없어짐. 내용도없기때문에!
+    <div>안에 내용을 넣음</div> 그 글씨 크기만큼의 너비와 높이를 가지게됨! 
+
+    inline은 너비와 높이가 없지만 'block은 너비와 높이가 있음!'
+    inline으로 다른점은 너비와 높이뿐만이 아님! inline은 box가 아니며 더 다른 차이점이 존재!
+
+    block은 box고, box는 엄청난 특징 세가지가 있음!
+    margin,padding,border 임!
+
+    <head>
+        <style>
+            html {
+                (이건 문서 전체를 선택한거임!)
+                background-color: black;
+
+            }
+            body{
+                margin: 5px;(이렇게하면 사방 동일하게 값이 들어감)
+                margin: 20px 5px 12px 99px;
+                background-color: tomato;
+            }
+            div {
+                margin-left: 50px;
+                margin-top: 10px; (이렇게 사방으로 줄수있음.)
+                margin: 80px 15px;
+                height: 150px;
+                width: 150px;
+                background-color: white;
+
+             } 
+        </style>
+    </head>
+    이걸 해보면 검은 html, 하얀색의 box는 좌측상단에서 약간 떨어진채 보여짐!
+    빈 공간을 둔채 box가 생긴 이유는 브라우저가 요소들에게 많은 style의 속성을 줌!
+    의도하지않았음 이것은! 우리가 별도로 코딩을 준 것이 X
+    예를 들면 브라우저는 자동으로 h1태그는 제목으로 block의 속성에 굵은 글씨체로나옴!
+
+    검사해서 스타일쪽을 봐보면 body에 user agent stlyesheet = 브라우저가 기본적으로 스타일 속성부여
+    body가 box인것을보면 이 태그는 기본적으로 block이 적용되어있다는걸 알수 있음.
+    그리고 브라우저가 임의로 margin: 8px;을 부여함! 
+
+    margin은 공간인데, box의 border(경계)로부터 바깥에 있는 공간임!(아웃사이더~)
+    body에 색을 주면 body가 얼만큼인지 알수있음 = div의 사이즈 만큼됨!(사이즈 신경 ㄴㄴ)
+    body는 경계 바깥으로 공간을 갖고 있음! (= margin) 이 떨어진 공간에는 배경색이보임!
+    해서, body{margin : 0px;} 하게되면 딱 붙음 ㅋ 공간이 사라짐!!
+
+    div에 margin줘보기! 그러면 div는  body로부터 공간을 얻게됨(떨어진다는 뜻)
+    
+    margin-left: 50px; margin-top: 10px; 이렇게 주는거 좀 복잡하쥐?
+    간단한 방법! margin : 20px 15px; 이렇게 이어서 쓰면 
+    앞에 20px = 위,아래를 뜻하고(수직) 뒤에 15px = 왼쪽, 오른쪽 뜻함(수평)
+    네개의 값을 다주면 순서대로 "위,오른쪽,아래,왼쪽" 순임!! (시계방향!!)
+
+    div 상자에도 margin을 주는데 이상한일이 생김!  margin: 20px 15px;
+    위아래에 마진이 안생김.. margin: 80px 15px; 값을 바꿔보자.
+    하얀색 상자에만 margin을 주고싶은데 전체가 이동함..
+    요소 검사해서 보면 div가 80인데도 body의 경계가 위로 밀려남 이런 들여쓰기 된 것같은 현상을
+    collapsing margins 라고함 위,아래쪽에서만 일어나는 현상으로!
+    = 흰색 box의 경계가 토마토 box의 경계와 같다면 이 두 margin은 하나로 취급됨!!
+    div의 위아래 margin 값 만큼 body에도 영향을 미치고 있음(위아래 경계가만나면 하나취급~)
+
+
+    이거 외울필요 없고 그렇구나~, 한번 겪어보면 아 경계가 맞닿아서 그렇구나~정도
+
+    그러면  하얀색 상자가 토마토와 위아래의 경계를 가졌으면함!
+    이때 등장하는 것이 padding임!!
+
+    padding은 margin과 반대의 개념이라고 생각하면됨 (바깥<->안쪽)
+    padding = 경계(border)의 안쪽으로부터 있는 공간임!
+    쓰는 방식은 margin과 동일하게 적용됨! 
+
+    다른 점은 "안쪽!" 안쪽에 생기는 공간이라는것!
+
+    상자속의 상자, 그 상자속에 상자를 만들어석 색을 줘보고 실습해보자!
+
+    각각의 상자에 다른색을 주려고한다면 (상자 = div) 각 태그에 ID들을 부여!
+    <div id="first"></div> 이렇게! 
+    그러면 style 태그에서 어떻게 적용하냐 
+    
+    이때것, 우리는 태그를 선택했음.
+    <style>
+        div {background-color: yellow;}
+    </style>
+    태그 선택할때는 HTML에 있는 태그의 "이름을 그대로 써서 사용"했으면 됬었음! 
+    하지만 ID는 앞에 "#"을 붙임!
+    <style>
+        #first {background-color: bule;}
+    </style>
+
+
+    border은 매우 쉬운 개념임! 말그대로 box의 경계임!
+    border는 속성이 많지만 잘 안씀.. 한가지만씀! 왜냐면 별로 안이쁨.. ㅋ..
+    쓰는 법은 border: 선너비 선스타일 종류 선색;> border: 2px solid black;
+
+    *{} :'*'는 전체를 뜻함! 전체 선택자 ~
+    *을 이용해서 inline 도 border를 가질수 있는지 보자~! span하나 생성~!
+    헐 개싕기! 해보세욤 ㅋ
+
+    style의 속성을 이용해서 border가 어떻게 보이는지 정할수 있음!
+    또한 위에 있는 코드부터 차례로 적용된다는 css의 성질을 이용할 수도 있음!
+    수정하거나 추가할때 모든코드를 다시 쓸필요X css의 성질을 잘기억하면됨!
+
+    와.., 그럼 inline에서는 margin과 padding이 통할까?
+    전에 너비와 높이는 안되는걸 알아! 과연? 와.. 이런질문 생각도 못함 ㅋ 천잰가? 이사람
+
+    ex)
+    <head>
+        <style>
+            body {
+                margin: 20px;
+            }
+            span {
+                background-color: teal;
+            }
+            .tomato {
+                background-color: tomato;
+                padding: 5px 10px;
+                border-radius: 5px; :모서리 둥굴게 ㅋ 짱싱기
+            }
+        </style>
+    </head>
+    <body>
+        <span>hello</span>
+    </body>
+
+    span에 padding과 margin이 적용되는가!
+
+    결과 padding은 되지만  margin은 좌우만 적용됨.
+    검사로 볼때는 다적용된것처럼 보이는데, 우리가보는 화면 홈페이지는 좌우만!
+    이는 inline이기때문임! 
+    inline이 너비와 높이가 없기때문에 위아래의 magin을 가질수 없음!
+    그렇데.., 근데 padding은 좌우로 가능함.margin만 좌우로 가질수있음!
+    (padding은 머랄까 안에 솜넣는 개념인것같고.., margin은 그냥 그렇데 외우자)
+
+    만약, 실전에서 margin의 위 아래를 쓰고싶다면 block으로 바꿔줘야함
+    inline은 좀 특 별함! 다른거랑 달라~ 에스파~
+    모든 속성이 다적용되지 않고 일부만 적용되는 경우도 있음..
+
+    box는 여기까지! 넘어가기전에 class 알아보기!
+    
+    class란 많은 같은 태그중에 일부에는 다른속성을 주고싶다한다면?
+    id 같게? 안됨! id는 고유하니까! 한번만 쓸수 잇음 그럼 1234붙여서 하면은?
+    그럼 중복 발생! style에서 같은걸 여러번쓰거나, ","로 selector를 하나로 묶는거나
+    #tomato,#tomato,#tomato3 { } : 요로캐
+
+    여기서 더 간결하게 하게 만들어 줄수있음!(id는 절대 겹치지 말아야함!)
+    요소를 가르키면서 겹쳐도되는, 여러 요소들에게 동시적용할수있게 하고싶을때 사용하는게
+    class임! class의 쓰는법은 "."을 붙이면됨! :  .class name{ }
+
+    class는 유일할 필요 X 여러요소에 같이쓸수있음!
+    한번에 여러 class가 쓰일 수 있고, 한요소에 다양한 class가 있을 수 있음.
+    <span class ="tomato hello honey potato">hello</span> : 각각 다른 class임!
+
+    class와 id의 차이를 잘 기억하기~!
+
+    중복 없애기
+    <head>
+        <style>
+            body {
+                margin: 20px;
+            }
+            .btn {
+                padding: 5px 10px;
+                border-radius: 5px; 
+                이렇게!! 이후에 HTML에 태그에 class 추가하기!
+            }
+            .teal{
+                background-color: teal;
+                (padding: 5px 10px;
+                border-radius: 5px; )
+                이렇게하면 아래랑 똑같이 중복이 되니까!
+                별도로 클래스를 또 만들어서 빼줌!
+            }
+
+            .tomato {
+                background-color: tomato;
+                (padding: 5px 10px;
+                border-radius: 5px;) 
+            }
+        </style>
+    </head>
+    <body>
+        <span class="teal">hello</span>
+        <span class="tomato">hello</span>
+        <span class="teal">hello</span>
+        <span class="tomato">hello</span>
+        <span class="teal">hello</span>
+        <span class="tomato">hello</span>
+        
+        -아래는 추가버전~ btn
+        <span class="btn teal">hello</span>
+        <span class="btn tomato">hello</span>
+        <span class="btn teal">hello</span>
+        <span class="btn tomato">hello</span>
+        <span class="btn teal">hello</span>
+        <span class="btn tomato">hello</span>
+
+    </body>
+
+inline과 block.
+div태그는 box로 block의 형태를 가지고 있음. 이것을 style에서 바꿔줄수있음
+그 속성이 "display"!! 
+(이걸로 기본 block설정인 애를 inline을 바꿀수있음. 또한 반대도가능)
+
+다시 말하지만 block은 옆에 아무것고 못고, inline은 높이와 너비가 없어서 나타낼수 없음.
+색으로! 글자를 넣으면 나타남!! 그런 inline을 볼수있는 특이한 속성이있는데,
+저어어어어어어어어어어어어어엉말 구림! 디자인적으로 난감함 애매함 
+
+우리가 원하지 않는 빈공간이생기고 이거또한 불균형임 매우맘에 안듬 보기싫음..
+그리고 다른 사양이 다른컴이나 홈페이지의 크기를 줄이면 또변함! 
+Responsive Design(반응형 디자인)이 아님! 지원하지 않음!
+
+이제는 이것을 쓰지않고 다른 속성을씀. 바로, "flex"
+
+flex box는 박스들을 어떤곳이든 둘수있음! 자동으로 유연(flex) 박스를 배열함!
+flex box는 사용한건 쉽지만 아주아주 중요한 세가지의 중요한 규칙이 있음.
+
+첫번째, 적용하고 싶은 box의 엘레먼트가 아니라 부모에 해당되는 태그에 설정을 바꿔줌!
+자식이 되는 엘리먼트에 어떤 것도 적지X 오로지 부모에만 명시해야함~!
+
+ex) 
+자식을(div) 움직이고 싶으면 부모엘리트먼트를 flex container로 만들어줌!
+여기서 부모인 body의 태그의 displat를 flex로 바꿔줌 (flex 부모~)
+<head>
+    <style>
+        body {
+            display:flex; (명심! 부모를 바꿔야함!)
+            justify-content : space-btween; (대박 싱기방기함.)
+            align-items: center;
+            (헉근데 이 것만 적어서는 적용이 X 왜냐면 아래에 추가 설명!)
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: teal;
+            (여기에 적는거  XX)
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    div></div>
+    div></div>
+</body>
+해보기~  그럼 이태그들은 여전히 block이면서 나란히 두게됨! 마진,패딩도 여전히 존재!
+body가 자식들을 제어하는 거임!
+
+그리고 이제 다른 많은 속성들을 수정할 수 있음. (display:flex여야만이 적용가능!)
+justify-content 라는 속성인데 기본 값은 flex-start임!
+(display:flex여야만이 적용가능! display:flex한 엘리먼트가 flex 컨테이너가됨!)
+
+자동적으로 빈공간을 계산해서 분배해줘서 화면의 크기를 작게하면 빈공간도 작아짐
+
+두번째,세번째는 flex box의 기본적인 축!
+바로 주축(main axis = 수평방향 )와 교차축(corss axis = 수직방향) 임!
+justify-content는 주축(main axis = 수평방향 )위에서 움직임, 적용됨!
+그리고 align-items 라는 속성은 교차축(corss axis = 수직방향)위에서 움직임, 적용!
+
+참! 기본적으로 "교차축 = 수직, 주축 = 수평"이지만 언제든지 두개가 서로 바뀔수 있음.
+그래서 기본값이 이렇다~ 라고 생각해두기!
+
+align-items 왜 적용안되는 것처럼 보이는가!(기본값 flex-start)
+홈페이지 요소 검사를 통해보면 body는 box의 크기만큼의 높이를 가지고있음.
+그래서 이미 수직으로봤을 때 중심이기때문에 변화가 없어보이는거임!
+이 것을 눈으로 확인하기위해서는 body의 높이를 정해줄 필요가 있음!!
+ 
+height: 100vh; : vh = viewport height, viewport = screen
+
+따라서, 100 screen height = 화면 높이의 100%
+"vh" 단위는 화면 크기에 따라 자동으로 바뀜!! (이제 px와 vh를 아네 하하!!)
+align-items는 justify-content만큼 많은 옵션이 있지는 않음!
+(속성중 strech가 있는데 이건 박스의 높이를 없애주면 적용됨 함 ㄱㄱ)
+
+자, 주축과 교차차 축의 기본값인 수평과 수직을 서로 바꿔보자~!
+(어째서..?)
+
+flex-direction 임!
+이 속성에는 두가지 옵션이 있음 column과 row!
+display : flex;시 기본값은 row (수평)임!
+flex-direction : column; : 따란~ 주축이 "수직"이되고 교차축이 "수평"이된거임!
+(90도로 눕힌 것 같넼 ㅋㅋ)
+
+그리고! <div></div>에 내용을 넣는면 (<div>1</div>) div도 flex container가 될수 잇음!
+해서, div를 다룰려면 body가 container, "1"를 다룰려면 div를 container로!
+flex 컨테이너 안에 자식이 있고, 그 자식 엘리먼트도 flex 컨테이너 상태!
+이런식으로 사용할수 있음.
+
+그리고 이것들을 reverse할수 있음!flex-direction : row-reverse;
+이러면 123 배열이 321로 바뀜 (오왼-아래위 로 순서가 바뀜!)
+
+기억! flex-direction : column라면 주죽에 적용되는 justify-content는 수직!
+align-items는 수평으로 적용됨!
+
+또 다른 flex-wrap! (기본 값은 flex-wrap: nowrap;)
+모든 요소를 같은 줄에 있게 만들어줌! div의 크기를 신경쓰지않는 것 같음!
+flex box는 너비를 초기 사이즈로만 여기고, 모든 태그를 같은 줄에 있게 하기위해 너비를 자동으로 바꿈!
+
+flex-wrap: wrap; : 이 설정을 하면 명시된 사이즈를 방영함!
+한 주렝 들어가는 만큼 최대한 집어넣고 안되면 다음줄로 옮기는 것!
+얘도 reverse가 가능함! wrap-reverse(style은 띄어쓰기 = '-) 근데 잘안씀 ㅋ
+
+flex box는 박스를 배열하는데에 유용하다는 점! inline-block보다!
+속성도 다양하지만 그건 심화정에서~
+
+이제 요소들을 움직일 수 있음 거기에 아주중요한 position이라는 속성이있음!
+position 는 레이아웃 배치 보다는.., 위치를 아주조금 옮겨줌.
+처음다를 내용은  position: fixed; 임!
+
+<head>
+    <style>
+        body{
+            height: 1000vh; : 1. 100->1000으로 변경 스크롤 만들어주기
+            margin: 50px;
+        }
+        div {
+            /*position: fixed; <<요기!*/
+            width: 150px;
+            heigth: 350px;
+            color: white;
+            backgruond-color: teal;
+        }
+        #different{
+            top: 10px;  : (5. 위로부터 10px아래에 위치하게 만들기 상하좌우 써주면됨!)
+            left: 150px;
+            position: fixed;
+            backgruond-color: wheat; : 3. 이렇게 구분을 준뒤!! 아래 설명!
+            width: 350px; : 4. 위의 상자와 차이를 보기위함.
+        }
+    </style>
+    <body>
+        <div></div>
+        <div id="different"></div> : 2. 새롭게 하나 만들고 id부여 속성추가
+    </body>
+
+</head>
+
+body의 height값이 100vh라 딱히 느낌이 안오는데 이걸 1000vh로 설정하면 아주 긴페이지가됨!
+그리고 스크로를 해보면 position: fixed;된 div가 스크롤따라 내려옴!
+박스가 화면에 계속 화면에 머물러있음. 약간 홈페이지 메뉴창이 따라오는 듯함.
+
+이제 알아야할 중요한 부분이 있음 첫번째 초록색의 div가 새로운 different div 위에 있음
+= 한레이어 처럼 보임! = 두 개 box는 같은 레이어에 존재한다 
+두개는 서로 명시된 크기로 맞닿아있는데 차이를줘보자 구별할수 있도록 (4번)
+
+두개의 상자는 명사한 사이즈 만큼 크기가 지정되어있고 같은레이어에 서로 맞닿아 있음!
+여기서 different에  position: fixed;을 준다면? div의 포지션을 없애고!
+
+와우
+
+포지션 속성이 없는 일반 div는 그자리에 위치하고 different만 움직임.
+신기한건 위치고정인데, 이 div가 고정된 위치는 초기에 위치한 자리임!!
+different div가 레이아웃상에 그려진 위치에 고정되어 있는거!
+
+그런데 원하면 바꿀수 있음! (5번)
+그러면 different div 는 첫 번째의 초록색 div를 신경쓰지않고 그 위에 올라가 있음
+top: 10px; 값을 주기전에는 초록색div를 신경써서 그아래에서 시작했지만
+top,left,righr,bottom 이라는 속성 중에서 하나만 수정해도 노란색은 초록색 위로 가게돼있음.
+서로의 마진과, 패딩 신경 노노 이제 서로 다른레이어에 존재하는거임!
+두개의 레이어 형식으로 바뀜! (fixed 상태에서 top주면)
+(에 이상한데 top을 없애면 한 레이어로 돌아오는데 ㅋㅋㅋ left를 없애지않아도 한 레이언디?)
+
+> 해보기 두개의 같은 크기의 다른색 div를 만들고 한개만 fixed를 주고 오퍼시티주기.
+그리고 확인해보기 이 position 의 fixed 기능을.
+
+fixed를 사용하면 레이어를 부수고 다른레이어에 위치해 있을거임.
+그니까 ㅋㅋ   position이란 속성을 써야만이 top,left,righr,bottom에 값을 줄 수 있고,
+position : fixed;가 들어간 선택자들이 무조건 레이어의 제일 상위로 올라옴!
+
+모든 것의 위에 있음  가장 위! 제노스같은놈 ㅋ
+
+그리고 (left를 없애지않아도 한 레이언디?) : 이건 내가 별도로 top의 값을 주지 않았기때문에
+자동으로 div의 초기 위치의 top값이기때문에 한레이어처럼 보인거임 사실 다른레이어!
+
+또 다른 position의 옵션! 디폴트 값인 static!
+레이아웃이 박스를 처음 위치하는 곳에 두는 것을 말함
+
+position 은 또 relative가 있음 가끔 유용함(조금만 위치를 수정하고싶을때 사용!)
+element가 처음 위치한 곳을 기준으로 수정하는 것! (첫 기준점이 중요함!!!)
+relative를 하면 ttop,left,righr,bottom 의 속성을 사용할수있음!
+
+다시, 'relative은 엘리먼트가 처음 놓인 자리에서 상하좌우로 움직인다고' 기억하기!
+
+
+또 다른 성격인 absolute는 상하좌우를 쓰고 싶을때 사용하는데,
+조금 특이한 점이 시작점이 다르다는 것! 부모의 박스 기준이아니라 body를 기준으로!
+그 이유는 얘 특성때문인데 absolute는 가장 가까운 관려된 부모를 기준으로 이동시켜줌!
+
+<head>
+    <style>
+        div {
+            width: 150px;
+            heigth: 150px;
+            backgruond-color: wheat;
+        }
+        .green{
+            backgruond-color: teal;
+            height: 100px;
+            width: 100px;
+            position : absolute;
+            right: 0; : 창의 맨오른쪽 끝에 붙음.
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="green"></div>
+    </div>
+</body>
+
+green div의 부모는 div지만 relative한 부모가 아님(ㄴㅇㄱ 상상치도 못한 반전)
+그래서 다음으로 relative한 body가 부모가됨! body는 바깥쪽에 있는 가장 relative한 부모가 될수 있음!
+(relative한 부모가 뭔데 ㅋ )
+
+그런데 이렇게 하고싶지않다면 absolute의 부모(div)를 relative로 만드는 거임
+.... 와 존나 어이없음 " div에 position: relative; 추가하면 됨 " 와..왜?
+부모의 position 속성이 relative여야한다는 말 같음!
+
+다시, absolute을 쓸때는 relative속성을 가진 부모가 반드시 필요하다는 사실!
+옮기고 싶은 박스가 있는데 부모를 정해주지 않는다면 그것은 body기준으로 자동배치됨
+따라서 꼭 하고싶은 범위내에 relative 부모를 지정해줄것!
+
+
+Pseudo Selectors (가상 선택자)
+= 좀 더 세부적으로 엘리먼트를 선택해주는 것.
+
+태그,아이디,클래스 선택하는 방법 말고 다른방법!
+
+<head>
+    <style>
+        div {
+            width: 150px;
+            heigth: 150px;
+            backgruond-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+div 준비, 마지막의 <div></div>를 선택해서 색을바꾸고싶다!
+div:last-child {
+    backgruond-color:teal;
+}
+하면댐. 이때 선택자 ":"를 하면 많은 옵션드이 나옴! 
+div 리스트중에 마지막 자식을 선택한다는 뜻임 last-child !
+반대도 가능함. 첫번째 자식 선택~
+
+이렇게 하는 것이 클래스나 아이디를 만드는 것보다 훨씬 좋은 방법임
+css만 선택했을뿐 이외 많은 가상선택자들이 있음.
+
+:nth-child(2) = n번째 자식 선택 >2번 div / 짝수만 선택 (even) /홀수만 선택 (odd)
+ even = 2n / odd= 2n+1
+3번째마다 변하고싶으면 = (3n+1) 처음바뀌고 하나둘셋 세번째에 바뀜!
+n = 다른 숫자를 대입함!!!
+
+
+
+Combinators()
+
+<head>
+    <style>
+        body{
+            height: 1000vh;
+            margin: 50px;
+        }
+        span{
+            color: tomato;
+            background : yellowgreen;
+        }
+        /* p안에있는 span에게만 색을 바꿔주고싶음*/
+        p span{ 
+            color; teal;
+            : 부모쓰고 띄어쓰고 찾고자하는 자식 = 부모안에서 자식찾기.
+            : div  p span 써도 문제가 없지만 
+            만약 부모가 다르다면 경로가 다르기때문에 적용X
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>hello</span>
+        <p>
+            어쩌구 젖쩌구 문장 많이 <span>예나 선정이 딸이에요.</span>
+        </p>
+        <span>hello</span>
+    </div>
+    
+</body>
+
+그리고 만약에  "hello"에게만 효과를 주고싶을 때 (어떤거에 효과주고 밑에서는 그효과 삭제하기보단)
+div의 바로 밑 자식(direct children)에서 "hello"의 span을 선택 할 수 있음
+div span 이렇게하면  두 개 전부에 들어감 div의 자식이기만 하면되니깐 p 안에있어도
+해서, div ">" span : 여기서 span은 div의 직속 자식인 "hello" span을 말함!
+
+이번엔, 바로 밑의 자식이 p이고 span이 아래있는 상태에서 p의 형제이누span에게 효과를 주려한다면?
+p다음으로 오는 span에 주는거임! p "+" span{} : 형제 선택자. 바로 딱 뒤에 와야함!!
+
+p "~" span : + 와 같은 형제 선택자인데 바로 뒤에 오지않는 경우! 한태그 띄어져있는 경우!
+
+정리!
+p span 이렇게 있을때 우리는 이것이 부모(앞),자식(뒤)의 관계라는 것을 배움
++를 사용하면 다이렉트 형제, >를 사용하면 바로 밑의 자식, 
+~ 을 사용하면 형제와 형제이나 꼭 바로뒤에 올필요없는 그런 관계 선택자!
+
+
+그리고 더 많은 Pseudo Selectors 인터넷에 검색해보면 볼수 있음.
+input:required ,: optional 이런것두 잇당 ㅇ0ㅇ
+
+attribute selectors = 속성을 통해 어떤것이든 선택할수 있게 해줌!
+선택자[선택자가 포함한 속성]{
+    이렇게 할수잇다!
+}
+더나아가
+선택자[선택자가 포함한 속성~=""/ ""안에 들어가는 이름을 포함한 속성 선택자 모두 선택]
+중요! 기억해두면 편리해! "~" = 포함한! 
+ex)
+head
+<style>
+    inupt{
+        border:1px solid wheat;
+    }
+    input:required {
+        border-color : tomato;
+    }
+    input[placehloder~= "name"]{
+        background-color : pink;
+    }
+</style>
+body
+<form>
+    <input type="text" placehloder= "First name"/>
+    <input type="text" placehloder= "Last name"/>
+    <input type="password" required placehloder= passworde"/>
+</form>
+
++ $ = ".png" : 이런식으로 png로 끝나는 것들을 포함 선택!
++ ^ ="f" :처음에 오는 경우
+싱기방기 뿡뿡방기 얼마나 많은지 검새갷서 보시고요 ㅋ MDN에서 찾아보기 어썸 ㅋ
+
+html에 이름을 부여해서 선택하기도 전에 그냥 css로 자체로 선택하는방법 알아봄!
+
+개발자 도구에서 확인할 수 있는 가장 중요한 선택자는
+state를 보면됨 active, focus, hover over, visited, focus-within
+
+먼저, active는 버튼을 누르고 있을 때의 변화! ex. 누를때(누르고있을때) 그버튼이 파란색으로 됨
+hover는 마우스가 대상위에 있을 때를 말함. 클릭X 그저 올려놓기만!
+이 것들의 디폴트 설정을 바꿀수도 있고, 어떤 것이든 이 설정을 바꾼다면 
+지정되있던 border 속성을 잃어버림 = 디폴트 스타일 바꾸면 다시 처음부터 스타일해야함!
+
+focus는 active처럼 클릭 했을 때와 비슷한데 다름!
+이 것은 키보드로 선택 되었을 때를 말함!!! Tap으로 눌러서 바꿀때 라던지..
+
+visited는 링크에만 적용됨! 단어 뜻대로 방문했다.
+방문하기 전 사이트는 파란색!, 방문하고 나면 보라색으로 바뀜! 
+그 링크를 방문했기 때문에 visited가 된 거임! 
+
+focus-within은 조금다름, 부모에 적용되는 속성임! within = '안에'!!
+focused인 자식을 가진 부모의 엘리먼트의 상태!
+여기 엘리먼트(부모) 안에 어떤것이든(자식) focused되면 이렇게 만들어 줘라~
+
+state와 연계해서 다른 태그들에게 스타일효과주기
+ex) form:hover input { background-color:sienna;}
+ 요건form이 hover가 되어있고, 그안에 input이 있을때 적용될꺼임.
+ form:hover input:focus { background-color:sienna;}
+ 와.., 이건 마우스가 버튼에 올라와있고 키보드로 선택되어있으면 적용되지만
+ 마우스가 그 버튼위에 없으면 적용되지 않음! 이중에 하나라도 안대면 적용X
+
+
+실제로 존재하는 엘리먼트는 아니지만 스타일링 할수 있게 해주는 pseudo element!
+이 pseudo element들은 :(콜론)이 2개인 게 특징!
+1) :: placeholder
+: placeholder의 특성만 바꾸고 싶을 때 사용.
+
+2) :: selection
+: 클릭해서 긁을 때 발생. 글자새도 가능 패딩은 안대네 ㅋ
+
+3) :: first-letter / ::first-line
+: 첫 글자에만 적용 / : 첫 줄에만 작용.
+
+구지 외우지 않아두됨 검색하면 알수 있음~ 근데 난 이 검색을 모름 ~ 쿠쿠루핑퐁
+연습하면 기억하게 된다고 하십니다. 그렇군요....
+
+고급 css로 넘어가기전에 컬러에 대해! 컬러는 css에 매우 중요함.
+그리고 변수에 대해서, 변수는 아주 많이 쓰임
+
+먼저, color 쓰는 세가지 방법!
+첫번째! hexadecimal color(16진수 컬러)
+ex) color: #fcce00; 이를 컬러코드라고 하는데 컬러를 지정할 수가 있어.
+
+두번째! rgb방식임! 
+ex) color: rbga(252,206,0, 0.8); + a(알파) 투명도를 정도를 정해줌!
+
+셋번째! 우리가 늘 쓰는 인터넷에서 정의해둔 색이름 쓰기!
+ex) color: tomato;
+
+만약, 두가지 색을 동일하게 쓰다가 둘다 바꾸고싶다면, ":root" 라 불리는 엘리먼트에 변수
+ex) :root{
+    --main-color: #fcce00; 
+    /* 
+    변수 dash 2개 다음에 dash1개 변수이름, 이렇게 이름을 지어야함!
+    빈공간이 있다면 dash(-)로 채워줘야함돼
+    */
+    --default-border: 1px solid ver(--main-color);
+}
+해두면
+p {
+    background-color : var(--main-color);
+    /* 변수를 쓸때는 var을 쓰면됨 */
+}
+a {
+    color : ver(--main-color);
+    border:ver(--default--border);
+}
+이렇게 쓸수잇음 대박임 와오 
+
+이것을 custom propertie라고함!!!!! 나중에 또 써볼꺼임
+css custom properties mdn 검색 사용자 지정 css속성 사용하기 (변수)
+
+
+
+
+변수에는 값을 저장할 수 있게해줌! 그리고 나중에 쓸수 있게해주는 거지!
+css를 프래그래밍언어로 보이게해줌. 프로그램언어는 아니지만 그 장점을 비슷하게 보여줌
+
+
+
+몇가지 고급 CSS편
+
+Transitions은 기본적으로 어떤상태에서 다른 상태로의 "변화"를 애니메이션화 하는 것
+state에 따라 바뀌는 prooerty를 가지고 있으면 사용됨! 
+애니메이션을 주고싶다! Transitions!
+
+ex )Transition를 사용하지 않는 경우! 일반의 경우!
+마우스를 위에올려두면 색상반전되는 링크경우, 색이 갑자기 변함!
+부드럽게 변하지 않음. 이지인/아웃X
+
+<head>
+    <style>
+        a{
+            color: wheat;
+            background-color: tomato;
+            text-decoration: none;
+            padding: 3px 5px;
+            border-redius: 5px;
+            font-size: 55px;
+            
+            
+        }
+        a:hover {
+            color: tomato;
+            background-color: wheat;
+        }
+    </style>
+</haed>
+<body>
+    <a href"#">Do it!</a>
+</body>
+
+-
+
+우리가 원하는것은 서서히 변하는 일종에 효과같은 느낌임!
+바로 이 때, 필요한 것이 transition 임!!
+
+그리고 transition이라는 속성은 state가 없는 요소에 붙어야함! 
+따라서 위에 a에 (호버말고) 넣어야함 !
+넣고자하는 태그가 가장 처음 생겨난 곳에! 변화가 시작되는 곳, 원천 태그!
+
+
+
+<head>
+    <style>
+        a{
+            color: wheat;
+            background-color: tomato;
+            text-decoration: none;
+            padding: 3px 5px;
+            border-redius: 5px;
+            font-size: 55px;
+            transition :  background-color 2s ease-in-out, color 1s  ease-in-out;
+            /*
+
+            transition : 변경하고싶은 것 변화할 시간 ease-in-out;
+
+            이렇게 작성! 주의할 점!
+            변화의 시작점, 변경할 태그에서 transition!! 변화될, 변화된 쪽 X!
+            이유는 밑에다가 주면 갑자기 마우스를 땔 때, 기다려주지않고 바로 원상태로 변해버림!
+
+            반드시, 변화를 줄 것에 대해 변화 될 부분이 둘다 들어가있어야함
+            시작과 끝이 있어야한다 A에서 B로 양쪽에 값이 있는 태그만 가능!
+            이 경우, a가 시작(변화 시작) a:hover 끝(변화 될)
+            color와 background-color만 transition을 줄수있음
+
+            따로 따로 애니메이션을 줄수있지만 한번에도 가능함!
+            그리고 이게 가장 일반적으로 사용하는 방법임!
+
+            transition : all 1s ease-in-out; 이렇게하면
+            양쪽에 해당하는 변화하는 값들이 알아서 각자 3초의 애니메이션을 가지게됨!
+            
+            모든것에 애니메이션 가능하다~ redius에도~ 뭐든 가능~
+            각각 넣고싶을때 트렌지션 끝에 ,(콤마) 잊지말기~!
+
+            */
+            
+        }
+        a:hover {
+            color: tomato;
+            background-color: wheat;
+        }
+    </style>
+</haed>
+<body>
+    <a href"#">Do it!</a>
+</body>
+
+-
+
+ease-in-out; = ease-in function
+기본적으로 브라우저에게 어떻게 애니메이션이 변할지 말해주는 것임.
+이지인.., 아웃은 ㅋㅋ 잘알지요..네..네..다릅죠.. 알죠알죠
+
+기본적으로 linear(리니어),ease-in,ease-in-out,ease으로 가지고 있음.
+설명을보면 cubic-bezier이 있는데 아주 강력함, 나만의 커브를 만들수 있음.
+이걸 사용할수도 있음!!
+https://matthewlein.com/tools/ceaser : 이 사이트 유용하구 좋구먼!!
+
+transition :  background-color 2s cubic-bezier(0.735, 0.010, 0.615, 1.040);
+
+특히 hover는  transition을 할 때, hover대신 active일때도 작동함!
+아니면 뭔가 변화하는 stete에 작동이됨!
+
+
+Transformations = 요소를 변형시킬수 있음! 어떤 변형이든 다 상관없이 가능함!
+단, Transform은 다른요소의 박스를 변형시키지 않고 (다른 형제 변화 X)
+원한는 요소를 이동시키기 위해 사용하는 것!
+
+Transform은 다른 box element, 이미지에 영향을 끼지치 않음.
+Transform은 페이지의 픽셀의 다른부분에서 일어나기때문임!(3D)
+box(2d) 차원에서 일어나지 않음!!! 마진, 패딩이 적용 X
+일종에 이 것이 3D Transformation이기 때문임 (3차원적으로) 픽셀을 변형시키고 있음!
+(텍스트랑 이미지 있을때 이미지가 움직여도 텍스트는 그자리. 텍스트위에 이미지..있다조..?
+옆의 텍스트는 이미지가 움직였다는걸 인식 x 다른 차원에서 일어났기 때문에..?)
+
+
+로고 하나 사이즈 변경해보기~ 3D로 돌림.. 로테이션.. 말고도 
+transform : rotateY(85deg) rotateZ(45deg);
+scaleY(4); translatX(-600px); skew(45deg); :비스듬한 정도 deg= 각도
+
+중요한것은 앞에 배웠던 transition과 조합할수 있음. 다양하게!
+
+다시한번 transition은 root에 있어야함 state에 있음X 
+여기있으면 처음은 작동하지만 덴순간 원래대로 돌아감
+
+css에서 애니메이션 이렇게 하는겁니다 boom!
+추천! transform mdn 검색~! 다양하게 존재함~~~
+
+
+
+애니메이션 파트~
+
+지금 현재 hover에 transform에 변화를 주어 transition을 통해 애니메이션이작동되고있음
+그러나, 이건 마우스가 이미지 위에 올라갈때임!
+
+만약, 그냥 이 애니메이션이 지속되게 하고싶다면? hover와 transition 없이!
+
+
+애니메이션을 만드는 규칙은 간단함! 맨앞에 "@"를 적음됨!
+@keyframens 원하는이름 {
+    from{ 
+        :어디서부터 
+        transform:rotateY(0);
+
+    }
+    t0 {
+        :어디까지 애니메이션을 줄지
+        transform:rotateY(360deg);
+    }
+}
+이렇게 주고싶은 것을 주고, root에 "animation: 원하는이름 원하는초(s) ease-in-out;"
+이러면 페이지가 로드되는 순간 원하는 초만큼 애니메이션을 작동하고 멈춤
+계속애니메이션을 주고싶다면 이지인/아웃 뒤에 "infinite"를 붙여주면됨
+
+어때요 참쉽죠? (아뇨)
+
+이동의 경우 from에 아무값을 주지않고 to에 translateX(100px);을 추가할 경우
+5초동안 그쪽으로갔다가 순식간에 다시 0인 처음의 자리로 돌아옴.. 점프해서 ㅋ
+이런 부자연스러움을 없애기위해서는 몇 가지 단계를 추가하는거임.
+
+순서를 정해서 애니메이션을 주고 처음의 자리로 되돌리기.
+해서 이때
+@keyframens 원하는이름 {
+    0% { 
+        
+        transform: rotateY(0);
+
+    }
+    50% {
+    
+        transform: rotateY(180deg) translateY(100px);
+    }
+    100% {
+        transform: rotateY(0);
+    }
+}
+
+이렇게 단계를 나눠서 중간지점 돌아가는 지점을 설정하면됨
+얼마만큼의 스텝을 가질수있어? 원하는 만큼!
+transform이아니라 다른 property로 바꿀수 있음 그러나 transform으로 하는 것을 권장
+니코추천..ㅋ  
+
+
+몇몇은 애니메이션으로 만들 수 없는게 있음. ex) font-size..?
+
+만약 단계가 2개라면 from-to를! 단계가 많다면 0~100를 쓰면됨~!
+https://animista.net/ > 좋은 css animation!!
+
+
+Media Queries = 오직 CSS만을 이용해서 스크린사이지를 알수 있는 방법임!
+웹사이트를 보고 있는 사용자의 스크린 사이즈!
+
+기종이나 landscape(가로)모드/ portrait(세로)모드에서의 스크린의 변화에 따라
+css만으로 이 모든 것을 감지할 수 있음 그리고 우리의 CSS를 바꿀수 았다는 점!
+
+그것을  media querie 라고 불림
+기본적으로 브라우저에게 말함 핸드폰이나 스크린사이즈가 이정도라면 이 CSS를 보여줘!
+
+@media screen and (max-width: 600px) {
+    div {
+        background-color: tomato;
+    }
+}
+screen and (max-width: 400px) = 스크린이 600px 보다 작으면  색이바뀐다!
+(min-width: 650px) and (max-width: 800px) : 650에서 800사이에서만 토마토색!
+이렇게 더 많은 조건을 가질수 있음.
+
+여기서 인터넷에서 모바일버전을 확인할수 있음 검사-위에 모바일 아이콘 누르면 미리보기로 가능
+and (orientation: landscape) : 추가하면 가로를 감지할수 있음/ portrait(세로)도 할 수 있음.
+
+Media Queries 복습!
+media query는 조건을 추가할 수 있는 방법임! 코드의 조건을!
+조건이 참이면 아래의 CSS를 실행하라는 뜻임! 
+미디어 쿼리 안에 원하는 모든 css를 넣을수 있음. 
+단, css를 바로쓰는 방식이아니고 엘레먼트에 css를 적용!
+@media screen and (min-width: ) and (max-width: ) and (orientation: ) {
+    div{
+        background-color: wheat;
+    }
+}
+
+또한 media query는 and를 써서 연결함!다른 종류들도 있음
+min/max-device-width : 이 미디어 쿼리는 오직 폰에만 적용됌 데스크톱 이해 X
+or (orientation: landscape/ portrait)를 감지하는걸 써두됨!
+CSS media query mdn 검색 다양한 미디어쿼리를 볼 수 있음!
+
+스크린이 레티나 디스플레이라면 구별하여 더나은 퀄리티의 배경화면을 보여주는
+미디어 쿼리 aspect-ratio 
+
+@media type 
+ex.) 
+screen: 많이 쓰임 
+print :스크린을 프린트 하고싶을때 스케일이 다름. 프린트눌러서 보면 알 수 있음.
+
+
+
+
+git 과 github : 약간, 백업시스템 같은 느낌!
+
+git은 파일의 변경내역을 확인 할 수 있도록 도와줌(다양한 종류의 파일로!)
+이유는 이 시스템은 파일을 binary format으로 인식하기 때문임! (ex. 000010101110)
+다시, git은 파일을 계속 추적해주는 것임.(변경되면 자동 기록 그런걸까?)
+
+그런데 git으로 파일을 추적하고 있다고 예를 들어보자, 
+우리컴에 이상X 파일에 변경된 내역을 가지고있음.근데 싸악 날라가는 경우가 생긴다면? 
+그경우 github를 이용. 인터넷 서버에 백업(업로드)
+
+두개는 같은 것이 아님. git = version control system! 가장 기본적이고 중요하게 쓰임~
+github = 파일 내역과 파일들을 올려주는 공간!
+
+github!!
+repository(저장소) 코드를 넣은 포드인데 코드의 변경내역과 그 히스토리를 갖고 있는 폴더
+private(비공개) public(공개된) 두개 설정
+
+누르면 파일들과 코드파일의 미리보기와 히스토리를 볼수있음 수정될따마자 commit이 남음
+commit은 기본적으로 시점을 말함!= repository의 버전을 저장하는 시점!
+ex) 이제 이파일의 버전을 저장하고싶다!
+
+눌러서 봐보면 오른쪽 화면과 왼쪽화면 두개로 분할 되어는데,
+오른쪽은 이전 코드 왼쪽이 수정한 코드 파일을 보여줌 수정한 부분은 초록색!
+
+git 이 github를 이용해서 파일의 변경사항을 탐색해서 보여줌!
+추가되고 삭제된 것을 식별해주는 건 = git 이 하는 일임!
+
+이 것이 이 둘을 사용하면 좋은점! 변경사항을 쉽게 확인가능함! 코드 관리!!
+
+repository를 만드는 방법은 
+컴퓨터에 폴더를 만들고 그폴더를 업로드 하는 방식과
+처음부터 github 내에 repository를 만들어주는 방법임!(니꼬 추천)
+
+repository new 누르고 계정선택과 이름을 정해줌(공백없이 소문자로만 작성)
+공개해도 되고 비공개해도되고 하고 아래는 체크하지말고 건들지말고 만들기~!
+
+그리고 github desktop를 바탕화면에 깔고 로긘 열고싶은 저장소 클릭하면!
+컴퓨터와 github사이트에 있는 폴드가 연결된 상태가 됨!
+그리고 vsc로 드래그해서 연 폴더와 github desktop에서 만든 폴더가 같아야함!!!!
+안그러면 연결안대욥~!
+
+그리고 README.md(markdown 확장자) 만들기
+markdown은 서식이 있는 문서를 작성하는 것이라고 알고 있음 됨!
+README 파일은 모든 git repository가 가지고 있어야하는 파일임!!!
+
+
+안에 # = 마크다운에서 제목을 만들때 사용. 제목과 내용 작성해주고
+(더 많은 마크다운태그에 알고싶다면 구글링 하시오!)
+깃 허브 열어서보면 변경된 사항을 기록해줌! 그리고 파일이 만족스럽다!
+파일 선택 commit을 써줌, commit은 repository의 버전을 저장하는 시점!
+commit의 제목을써줌 설명은 필요없지만 제목은 필요함! 그리고 commit to master 클릭!
+
+그리고 publsh branch를 클릭하면됨! 그리고 사이트가서 새로고침하면 파일과 기록 뜸!
+
+파일 수정하고 저장하면 github desktop에 뜸 수정한 기록이!
+그리고 commit을 눌러줌(이전에 한번 저장한거 기억해줘서 같은 파일이면 걍 클릭)
+그럼 하단에 방금 커밋됨 이라고 뜸 그 말은 컴퓨터에서 git이 README.md파일을 
+업데이트된것을 알고있음!! 하지만 github는 아직 업데이트 된 것을 모름...
+깃 허브도 알수 있게 커밋할때마다 push를 눌러줘야함! 백업은 수동이구먼...ㅋ
+
+기억해~~ 파일 변경하고 저장 - github desktop가서 파일 체크 commit - push!!
+커밋을 누른다고 github에 업데이트되지않아 그냥 본인컴에 커밋된거임~!
+
+
+
+
+이제 클론~! 작업 해보기~~~~
+야호애호
+
+시작하기 앞어 새로운 파일 하나가있느데, 맥이나 윈도우에서 보이지않는 임시파일이 있음
+git은 모든파일을 참조 할수 있음. 그러나 이파일을 업로드 하고싶진 않음 
+그럴때 커밋에서 제외하면됨. 근데 좀 귀찮음
+폴더 하나 생성 .gitignore = 이 파일은 무시하고 싶은 파일의 이름을 기록하는 파일임
+이름이 필수적으로 ".gitignore" 이어야함!
+
+
+index이라고 제목을 짓는것은 대부분의 웹서버가 디폴트로 index.html을 찾게 설정되어있음
+index = 첫번째 의미로 디폴트 할 홈페이지임.
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+-->

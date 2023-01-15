@@ -1,0 +1,67 @@
+<!DOCTYPE html>  <h1>Create An Account</h1>
+   <form>
+        <div>
+            <label for="fn">First Name</label>
+            <input required type="text" placeholder="First Name" id="fn" />
+        </div>
+        <div>
+            <label for="ln">Last Name</label> 
+            <input required type="text" placeholder="Last Name" id="ln" />
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input required type="email" placeholder="Email" id="email" />
+        </div>
+        <div>
+            <label for="usern">User Name</label>
+            <input required type="text" placeholder="User Name" id="usern" />
+            <!-- 이런방법도 있따~ 그렇다~<label>Username <input type="text" placeholder="Username" required /></label> -->
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input required type="password" placeholder="password" id="pass" minlength="10" />
+        </div>
+        <div>
+            <label for="bday">Birth Date</label>
+            <input required type="date" id="bday" required />
+        </div>
+        <div>
+            <label for="happy">How happy are you?</label>
+            <input required type="range" id="happy" min="0" max="10" list="tickmarks" />
+            <datalist id="tickmarks">
+                <option value="0"></option> 
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+                <!--아 최소 최대를 하고 하면 구지 10/20/30/40.../100안해두되네-->
+            </datalist>
+        </div>
+        <div>
+            <label for="favc">what is your fav.color?</label>
+            <input type="color" id="favc" />
+        </div>
+        <div>
+            <input type="submit" value="Create Account" />
+            <!-- submit으로 해야함... 일반 버튼으로하면 경고창 안뜨네 ㅋㅋㅋㅋㅋㅋ-->
+        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 day</title>
+</head>
+<body>
+ 
+    </form> 
+    </form> 
+   </form> 
+</body>
+</html>

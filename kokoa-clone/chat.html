@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>chat w/woo - kokoa clone</title>
+</head>
+<body id="chat-screen">
+    <!-- body에 id 부여~~!-->
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>현재시각</span>
+        </div>
+        <div class="status-bar__column">
+            <span>58%</span>
+            <i class="fa-solid fa-battery-half fa-lg" ></i>
+            <i class="fa-solid fa-bolt-lightning"></i>
+        </div>     
+    </div>
+    <header class="alt-header">
+        <div class="alt-header__column">
+            <a href="chats.html">
+            <i class="fa-solid fa-chevron-left fa-3x"></i>
+            </a>
+        </div>
+        <div class="alt-header__column">
+            <h1 class="alt-header__title">every ☝ </h1>
+        </div>
+        <div class="alt-header__column">
+            <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+            <span><i class="fa-solid fa-bars fa-lg"></i></span>
+            <!-- 잊지마 span에 넣는거!! fa-lg도!!!-->
+        </div>
+    </header>
+    <main class="main-screen  main-chat">
+         <!-- 그리고 메인 클래스에 chat클래스도 추가! 
+        왜냐 main-screen은 양옆에 padding을 줄거고 
+        동시에 chat은 이제부터 작성할 내용을 반영할 것이기때문임~!-->
+        <!-- 타임스템프만들기 -->
+        <div class="chat__timestamp">
+            Thusday, Jun 30, 2022
+            <!-- 이렇게만하면 화면에 아무것도 X 
+            이게바로 시발 내가 한참헤맨 고질적인 문제!! 상태바와 이름바에 가려져서임
+            레이어가 한단계 아래에 있음!! 시이이이이이바아아아알!! 이거 chat클래스에서 수정 해주기 ㅋ -->
+        </div>
+
+        <div class="messaget-row">
+            <img src="http://file2.instiz.net/data/cached_img/upload/2017/12/11/23/56bc6725ce2c7618f08bfc193a8604a7.jpg" >
+            <div class="message-row__content">
+                <span class="message__author">Hosi</span>
+                <div class="message__info">
+                    <span class="message__buble">one ranghe!</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
+        <div class="messaget-row message-row--own">
+
+            <div class="message-row__content">
+                <div class="message__info">
+                    <span class="message__buble">❤</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <form class="reply">
+        <div class="reply__column"><i class="fa-regular fa-square-plus fa-lg"></i></div>
+        <div class="reply__column">
+            <input type="text" placeholder="Write a message..."/>
+            <i class="fa-regular fa-face-laugh-beam fa-lg"></i>
+            <button>
+                <i class="fa-solid fa-arrow-up fa-lg"></i>
+            </button>
+        </div>
+    </form>
+    <div id="no-mobile">
+        <span>Your screen is too  big 😂</span>
+    </div>
+
+ <script src="https://kit.fontawesome.com/04df4da1bd.js" crossorigin="anonymous"></script>
+</body>
+</html>

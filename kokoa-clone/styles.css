@@ -1,0 +1,45 @@
+@import "reset.css";
+@import "screens/variables.css";
+/* components */
+
+@import "components/status-bar.css";
+@import "components/nav-ber.css";
+@import "components/screen-header.css";
+@import "components/alt-screen-header.css";
+@import "components/user-component.css";
+@import "components/badge.css"; /*추가 햇으니 친구랑 채팅 html로 가서 수정!*/
+@import "components/icon-row.css";
+@import "components/no-mobile.css";
+/*파일의 순서를 지키는 것 매우 중요함!*/
+
+
+/* screens */
+@import "screens/login.css";
+@import "screens/friends.css";
+@import "screens/find.css";
+@import "screens/more.css";
+@import "screens/settings.css";
+@import "screens/chat.css";
+
+
+body {
+    color: #2e363e;
+    font-family:Arial, Helvetica, sans-serif;
+    /* height: 1000vh; = position: fixed;확인용도 */
+    /*
+    폰트는 다양하게 적용가능 google fonts검색 > 원하는 폰트 선택 embed에 가면
+    head-like를 사용하여 추가할수 잇으나 css를 통한 사용법 추천 = @import
+    @import을 CSS의 맨위, 상단에 위치 시킴!
+    그리고 밑에 font-family 에 붙여넣기~!
+    (폰트 스타일은 필요한 만큼만 추가! 안그러면 너무무거워짐!)
+
+    + 파일을 분리시 이부분을 옮기지 않음. 이는 styles.css 파일에 폰트 패밀리와
+    같은 모든 스크린에 적용될수 있는 스타일을 써놓는게 니꼬스탈이라네 ㅋ 
+    */
+}
+
+.main-screen {
+    margin: 20px 0px; 
+    padding: var(--horizontal-space);
+    /* 앱에 전반적으로 적용되어있는 기본 패딩값 같은거! */
+}

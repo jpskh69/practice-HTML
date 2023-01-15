@@ -1,0 +1,73 @@
+#friends-display-link {
+    text-align: center;
+    display: block;
+    background-color: #fafafa;
+    padding: 15px 0px;
+    font-size: 16px;
+    margin-bottom: 20px;/*여백의 연장선...*/
+    /* margin-top: 25px; 십년묵은 쳇증이 내려가네 시발 08.09*/
+    /*screen-header.css에 margin-botoom을 추가된게 잇어서 빼줌*/
+}
+#friends-display-link i {
+    color:rgba(0, 0, 0, 0.3)
+}
+
+.friends-screen {
+    padding: 0px var(--horizontal-space);
+    /*요기다가 이렇게 전체적은 왼쪽의 공백을 줍니다 (4번의연장선)*/
+}
+/* 나는 대충 이렇게 해봄 
+.friends-screen__channel-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 0px 18px 0px;
+    background-color: ;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    margin-top: 25px;
+}
+
+.friends-screen__channel-header span, {
+    height: 50px;
+} */
+
+.friends-screen__channel {
+    margin-top: 25px;
+    border-top: var(--gery-border);
+    padding-top: 15px;
+}
+.friends-screen__channel-header {
+    margin-bottom:  30px;
+    display: flex;
+    justify-content: space-between;
+    color:var(--main-text-color);
+}/*쌤은 필요한 부분에만 줬네용 오... 이런방법이..*/
+
+@keyframes hideSplashScreen{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+        /* display: none; 도가능함
+        visibility : hidden;은 마우스에 걸리지않게 빠져버림*/
+    }
+}
+
+
+#splash-screen {
+    background-color: var(--yellow);
+    position: absolute; /* 맨위로 올리기 , body의 기준으로 정렬되기 바람 */
+    height: 100vh; /*화면 높이의 100%을 의미*/
+    width: 100vw; /*화면 너비의 100%을 의미*/
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    animation: hideSplashScreen 0.8s ease-in-out  forwards; 
+    /* forwards는 마지막 속성 값을 마지막의 값을 유지하고 애니메이션이 끝남 */
+    animation-delay:  0.5s;
+}

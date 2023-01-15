@@ -1,0 +1,45 @@
+.status-bar {
+    /* box-sizing: border-box;  얘머야?*/
+    display: flex;
+    
+    /* justify-content: space-between; */
+    /*
+    잘보 보면 'no service' 부분이 커서 시계가 정중아잉아님 (화면 팍줄이니보임)
+    justify-content: space-between;도 좋지만 다른 width를 가지고 있기때문에 서로 안맞음
+    원하는 중심에 서지 않음.
+
+    조금 이상하지만 어디서든 써먹을수 있는 css hack(기술)
+    justify-conten 대신 컨테이너 하나를 중심에 놓는 방법임
+    space-between가 아니라 center을 씀!!!
+    그리고 모든 column에 33%의 너비를 가지게 할 것임!
+    */
+    justify-content: center;
+    position: fixed;  
+    top: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    /* 위에 고정하기 */
+    padding: 5px 3px;
+    background-color: white;
+}
+.status-bar__column {
+    width: 33%;
+}
+.status-bar__column:first-child span {
+    margin-right: 5px;
+}
+.status-bar__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+.status-bar__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.status-bar__column .fa-battery-half {
+    margin: 0px 6px;
+}
+.status-bar__column .fa-bolt-lightning {
+    margin-right: 6px;
+}

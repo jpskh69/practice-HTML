@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Settings - kokoa clone</title>
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>현재시각</span>
+        </div>
+        <div class="status-bar__column">
+            <span>58%</span>
+            <i class="fa-solid fa-battery-half fa-lg" ></i>
+            <!-- battery Icon -->
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <!-- Lightning Icon -->
+        </div>     
+    </div>
+  <header class="alt-header">
+    <div class="alt-header__column">
+        <a href="more.html">
+        <i class="fa-solid fa-chevron-left fa-3x"></i>
+        <!--
+            "<"가 보이지 않는 이유는 메인영역의 윗부분이 헤더 영역의 뒤로 들어갔기때문
+            header태그가 부모인 body로부터 독립하면서 body에서 점유하고있던 header태그
+            공간이 사라져깄기때문임!
+
+            해결하려면?
+
+            간단함! body 자체에 고정하고싶음 header의 바의 높이만큼 패딩을 주면됨!
+            
+            +!! 우리가 안한건 이 화살표를 누르면 이전으로 돌아가는 기능을 빼먹음!
+            more에서 톱니바퀴에게 했던것처럼! a태그 추가!
+            more로 되돌아가도록!!!
+        -->
+        </a>
+    </div>
+    <div class="alt-header__column">
+        <h1 class="alt-header__title">Setting</h1>
+    </div>
+    <div class="alt-header__column">
+        <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+    </div>
+  </header>
+  <!--나중에도 사용할수있는 component! altrtnative screen header작업을 마침!-->
+
+    <main class="main-screen">
+        <!-- 
+            setting은 기본적으로 list임! 리스트니깐 ul-li를 사용해서 만듬!
+            규칙적으로 '아이콘: 이름' 으로 구성되어있음
+        -->
+        <ul class="setting-list">
+            <li class="setting__setting">
+                <div class="setting__setting-column">
+                    <!-- 
+                        <div class="setting__setting-column"></div>안에 넣어줌
+                        어떤 항목은 두개의 컬럼을 가지고있고 어떤 항목은 없는데
+                        일단 모두에게 다 두개씩 컬럼을 만들어줌
+                    -->
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Notices</span>  
+                </div>
+                <div class="setting__setting-column"></div>
+            </li>
+            <li class="setting__setting">
+                <div class="setting__setting-column">
+                    <i class="fa-solid fa-flask"></i>
+                    <span>kokoa Lab</span> 
+                </div>
+                <div class="setting__setting-column"></div>
+            </li>
+            <li class="setting__setting">
+                <div class="setting__setting-column">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>version</span>
+                </div>
+                <!-- 
+                    마지막 항목처럼 새로운 column이 필요하니깐
+                    html을 수정하고 css를 넣어봅시다!
+                -->
+                <div class="setting__setting-column">Latesy Version</div>
+            </li>
+        <!--이렇게 설정창에 있는 메뉴들을 넣어서 추가하면됨!-->
+        </ul>
+    </main>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__but">
+                <a class="nav__link" href="friends.html"><i class="far fa-user fa-2x"></i></a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="chats.html">
+                    <span class="nav__notification badge">1</span>
+                    <i class="fa-regular fa-comment fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="find.html">
+                    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="moer.html">
+                    <div class="nav__newdot sbadge"></div>
+                    <i class="fa-solid fa-ellipsis fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="no-mobile">
+        <span>Your screen is too  big 😂</span>
+    </div>
+ <script src="https://kit.fontawesome.com/04df4da1bd.js" crossorigin="anonymous"></script>
+</body>
+</html>

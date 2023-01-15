@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Welcome to kokoa clone</title>
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+             <!--컬럼만 쓰기엔 너무 많이 쓰이고 어떤건지 잘모르니 추가
+            '__'를 붙여줘야함 없으면 그냥 두개의 클래스를 가진 것
+            이렇게 부모와 자식으로 이름을 짓는 건 알아보기 편하기 위해서임!
+            
+            이 구조를 BEM(Block Element Modifier) 라고 부름!(니꼬는 추천한다 이방식)
+            또한 클래스를 분리해서 쓰는 거임! 색은 색대로 큰버튼이면  큰 버튼으로!
+            그러다보면 클래스이름이 길어짐... 어려울수있지만 사람이 이해하기 쉬움...
+        
+            주석은 개발자들만의 코드 브라우저는 못봄! -->
+            <span>No Service</span>
+            <i class="fa-solid fa-wifi"></i>
+            <!--To Do: wifi Icon -->
+            <!-- icon을 넣는 두가지 방법
+            하나는 직접 구해서 넣는 것이고 하나는 svg파일을 이용
+            svg는 픽셀이 없는 이미지 파일 형식임! 수학으로 구성된 형식! 벡타?
+    
+            Heroicons 사이트 = 복사 붙여넣기 무료로 사용가능 무료라서 제한적임
+            Font Awesome 사이트 = 유료지만 일부 프리도 있음~~
+            -->
+        </div>
+        <div class="status-bar__column">
+            <span>현재시각</span>
+        </div>
+        <div class="status-bar__column">
+            <span>58%</span>
+            <i class="fa-solid fa-battery-half fa-lg" ></i>
+            <!-- battery Icon -->
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <!-- Lightning Icon -->
+        </div>     
+    </div>
+    <header class="wlecome-header">
+        <h1 class="wlecome-header__title">Welcome to kokoa clone</h1>
+        <p class="wlecome-header__text">
+            If you have a kokoa Account, log in with your email or phone number.
+        </p>
+    </header>
+    <form action="friends.html" method="get" id="login-form">
+    <!-- form은 아주주용한 속성이 있음! 하나는 action과 method임!
+        action은 어떤 페이지로 data를 보낼 것인지 지정할수 있음!
+        action을 설정해주었기때문에 페이지가 이동함! 
+        단, action에 적어 놓은 url에 해당하는 파일이 반드시 존재해야함~(당욘한 말이쥬~)
+        padding-top: 75px;
+        method는 2가지 방식이 있음 Post와 Get! 
+        post는 지금 이 프로젝트에서 사용할수는 X!
+        이 것은 백엔드 서버에 정보를 전송하는 방식임! 지금 우리는 서버를 가지고있지 않음!
+        
+        그래서 지금은 GET방식을 사용! 그런데ㅠ, 이건 보안에 취약함....(찡긋)
+        get방식으로 username과 password를 보내주면됨! 
+        URL에 포함되어도 상관없는 정보들을 get방식으로 보냄!
+        가끔씩 이방식을 사용하기도함! 구글 감색할때 주소창을보면 검색어 적용되는 부분..!
+        그런 방식이 get방식임!
+
+        지금은 method 방식이 뭐든 상관 없음!
+        중요한 것은 get을 여기다가 써둬여함. 프로젝트를 업로드 할때 업로드할 곳에서 post방식은 작동 X
+        get 방식만 작동하기때문에 get을 써둬야한다. > Aㅏ..반쯤이해함.
+
+        지금url이 보이는 것은 상관 X 중요한것은 '페이지를 이동'했다는 것임!
+    -->   
+        <input name="username" type="text" placeholder="Emali or Phone number" required />
+        <input name="password" type="password" placeholder="Password" required />
+        <input type="submit" value="Log in">
+        <!--<input type="submit" value="Sign Up">-->
+        <a href="#">Find kokoa Account or Password</a>
+    </form>
+    <div id="no-mobile">
+        <span>Your screen is too  big 😂</span>
+    </div>
+ <script src="https://kit.fontawesome.com/04df4da1bd.js" crossorigin="anonymous"></script>
+</body>
+</html>

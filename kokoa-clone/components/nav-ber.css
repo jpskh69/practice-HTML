@@ -1,0 +1,123 @@
+/*이 파일을 사용하려면 총괄 css파일에 import 해줘야함*/
+.nav{
+    /*네번째 네이베이션바 하단에 고정하기!*/
+    position: fixed;
+    bottom: 0; /*이렇게하면 너비값이 사라져서 다시 조정 뷰포인트처럼*/
+    width: 100%;/*이렇게하면 또 ㅠㅠ 점점점이 사라짐 ㅠ 이건 padding때문에 숨겨진 것뿐! */
+    background-color: #f9f9fa;
+    padding:  20px 50px;
+    /*마법의 한줄*/
+    box-sizing: border-box; 
+    /*
+    Border Box
+
+    CSS에게 200px 짜리 box를 원해서 만듬 거기에 만약에 padding을 추가한다고 한다면!
+    CSS는 지정된 200px를 유지한채 공간을 만들고싶어함!
+
+    왜냐면 그상태에서 안에 값을 주면 padding의 값만큼 자리를뺏기고 좁아지니까!
+    ex. 200px = padding 50px, content 150px 이게 싫은거임 그래서 
+
+    임의로 박스의 크기를 늘려서라도 content를 유지시키려고함
+    content 200px, padding 50px =250px : 난 250px박스 원하지 않음..!
+    (*참고로 패딩은 이렇게 다 작동함... 헐 몰랏다..)
+    
+    근데! CSS에게 box사이즈가 작아저도 괜찮다고 말할수 있는 방법이 있음!
+    그게 바로 이 마법의 한줄 "box-sizing: border-box;" 임!
+    이 마법의 한줄을 쓰면 cantent가 보일 부분을 늘리지 X!
+    
+    */
+    border-top: var(--gery-border);
+
+}/*두번째 배경색주고, 아이콘사이에 공간주기!(border로부터 icon까지 padding)
+    magin은 nav의 바의 크기가 늘어나는 거니까 확장맨~!*/
+.nav__list{
+    display: flex;
+    justify-content: space-between;
+}
+/* 먼저 아이콘을 양옆 배치 하기! 그리고 분배하기!*/
+
+/* 
+세번째 링크의 색을 지워주는 것인데, 이부분은 이전에 한번 했었음 중복할 필요 X
+reset.css파일에다가 모든 a(링크)가 색이 없도록 지정해줌됨!(밑줄도 XX)
+*/
+.nav__link {
+    position: relative;
+    color: #2e363e;
+} 
+
+@keyframes notificationAnimation{
+    0%{
+        transform: none;
+    }
+    50%{
+        transform: translateY(-5px) rotateY(360deg);
+    }
+    100%{
+        transform: none;
+    }
+}
+
+
+.nav__notification {
+    /*chats에 쓰이는 동그라미 일은 이부분만 빼고 다같음! 고로 badge.css로감!*/
+    position: absolute; 
+    left: 20px;
+    bottom: 14px;
+    animation: notificationAnimation 2s ease-in-out infinite;
+}
+.nav__newdot{
+    /* width: 7px;
+    height: 7px;
+    background-color: tomato;
+    border-radius: 10px; */
+    position: absolute;
+    left: 30px;
+}
+
+@keyframes appearBtnAnimation{
+    from{
+        /* transform: translateY(50px); 
+        여기다가 둬도되지만, 그러면  하나의 애니메이션이 끝나면 그때 다음 하나가 시작됨!
+        그래서 여기다 두는 것이 아니라.., 밑에 시작이 되는 곳에 그설정값을 줘두됨!
+        */
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
+}
+.nav__but{
+    transform: translateY(50px);    /*초기 위치 */
+    opacity: 0;
+    animation: appearBtnAnimation  0.5s ease-in-out forwards;
+}
+.nav__but:nth-child(2){
+    animation-delay:  0.3s;
+
+}
+.nav__but:nth-child(3){
+    animation-delay:  0.5s;
+}
+.nav__but:last-child{
+    animation-delay:  0.6s;
+}
+
+.screen-header__icons span {
+    margin-left: 25px;
+
+}
+
+@keyframes rotateGear{
+    from{
+        transform: none;
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.screen-header__icons .fa-gear:hover {
+    animation: rotateGear 2s linear infinite;
+
+}

@@ -1,0 +1,86 @@
+
+.user-component {
+    justify-content: space-between;
+    /*두개의 컬럼 떨어트리기 거의다왓어 마지막이야!~!~*/
+}
+
+/* .user-component{
+    display: flex;
+    align-items: center;
+} 아래랑 똑같으니까 합쳐주기! 
+참고로 잊지말가 ".user-component__column"는 2개의 컬럼을 가진 div임!*/
+.user-component,
+.user-component__column:first-child {
+    display: flex;
+    align-items: center;
+    /* padding: var(--horizontal-space);이렇게 하는거 XXX 두개의 컬럼을 
+    하나의 상자로 만들어주는거임 어떤태그에 넣어버리기~!  */
+}
+/*
+잠깐! 여기서 사용되는 이미지는 총 세가지 사이즈! 작은거, 보통, 큰거
+그래서 먼저 보통사이즈의 이미지를 만들어보자!
+
+이미지의 사이즈를 줄이고 사진과 글을 중앙정령 시키기! 그러기위해서 flex!
+"user-component__column"은 사진이랑 text의 flex설정된 부모임!
+*/
+.user-component__avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 27px;
+    margin-right: 15px; 
+    /*일단 기술적으로 유저의 component의 기본적인부분은 끝!*/
+}
+.user-component__title {
+    font-weight: 550;
+    font-size: 20px
+    /*서브타이틀을 만들건데, 이부분은 프렌드창에는X 
+    지금은 기본적으로 사용되는 틀을만드는거니까! 이걸가지고 조금 변형하는 식으로 가려고함! */
+}
+
+.user-component__subtitle {
+    margin-top: 8px;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.5);
+} /*참고 이미지를보면서 반복되는 것들을 component로 만들면 작업하기 쉬움~!*/
+
+.user-component__avatar--xl {
+    width: 80px;
+    height: 80px;
+    /*
+    사이즈 변형.. 아마 css특성상 이게 적용될것임 friends창에! 
+    그리고 전체적으로 왼쪽에 여백이 있는 부분은 variable.css에서 작성할것임!
+    (헐 따로 주는게 아니라 전체적으로 주는구나.. magin 아니면 padding으로!)
+    */
+}
+
+.user-component__avatar--sm {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+}
+.user-component__title--not-bold {
+    font-weight: 400;
+}
+
+.user-component__column:last-child {
+    color:rgba(0, 0, 0, 0.4);
+    display: flex;
+    /*요기에 이렇게 해주면 쳇에 동그라미 일이 옮겨짐 
+    단,이경우 친구창에 "2>"가 망가지는데 friends.html창에서 해결가능함~!*/
+    flex-direction: column;
+    align-items: flex-end;
+}
+.user-component__time {
+    display: block;
+    font-size: small;
+    margin-bottom: 6px;
+}
+/* .user-component__bg {
+    position: relative;
+    left: 12px; 
+} 
+으ㅏ아아악 있던걸 쓰다니 생각도 못햇다 ㄴㅇㄱ*/
+
+.user-component__text h6 i {
+    color: tomato;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Friends - kokoa clone</title>
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>현재시각</span>
+        </div>
+        <div class="status-bar__column">
+            <span>58%</span>
+            <i class="fa-solid fa-battery-half fa-lg" ></i>
+            <!-- battery Icon -->
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <!-- Lightning Icon -->
+        </div>     
+    </div>
+    <!-- 이렇게 필요한 부분을 남기고 나머지를 지움~! 
+        먼저 하단의 navigatio bar를 먼저 작업해보자~!
+
+        navigation 은 보통 ul로 나누어지고 그안에 많은 li가 존재함
+        그리고 li는 a(anchor)를 가짐! 이렇게 구성되어있음
+        <nav>
+            <ul>
+                <li>
+                    <a href=""></a>
+                </li>
+            </ul>
+        </nav>  
+        검색엔진 구글도 navigation을 찾아, ul>li>link를 가져오게끔 설정되어있음
+    -->
+<!-- 2. 헤더 만들기~!-->
+    <header class="screen-header">
+        <h1 class="screen-header__title">Friends</h1>
+        <div class="screen-header__icons">
+            <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+            <span><i class="fa-solid fa-music fa-lg"></i></span>
+            <span><i class="fa-solid fa-gear fa-lg"></i></span>
+
+        </div>
+    </header>
+<!-- 3. 친구창에 존재하는 "유일한"문구!! 만들기 유일하니까 id사용~!-->
+    <a id="friends-display-link">
+        <i class="fa-solid fa-circle-info"></i>
+        Friends' Neames Display <!--ㅋㅋㅋ i안에 집어넣어서 그랬음ㅠㅠ 따로따로임!-->
+        <i class="fa-solid fa-chevron-right fa-xs"></i>
+    </a>
+<!-- 4. 이제 user-component를 만들 것임 사진,이름,서브타이틀!!(공통적으로 사용됨) -->
+    <main class="friends-screen"><!--이렇게 상자에넣고 friends.css에서 작성!-->
+        <div class="user-component">
+            <!-- 
+            유저는 2개의 column을 가지고 있음
+            그런데 가끔씩 유저는 조금더 큰 2개의 column을 가지고 잇음..(?)먼말임?
+            약간 (0.5+0.5)/1 이런느낌 큰거 두개로 화면을 나누고 그중 하나는 
+            또 두개로 나뉨 이런느낌?
+
+            그러면 먼저 2개의 큰 컬럼을 만듬 단추키!(.user-component__column*2 -> 와우 개신기함)
+            -->
+            <div class="user-component__column">
+                <img src="https://pbs.twimg.com/profile_images/1416739400067604481/k-P-KiAV_400x400.jpg" 
+                class="user-component__avatar user-component__avatar--xl" />
+                <!-- "user-component__avatar--xl"이렇게 modifier(변형)을 만들어줌 다른클래스를 만들어서! -->
+                <div class="user-component__text">
+                    <h4 class="user-component__title">everyone</h4>
+                    <!--
+                    <h6 class="user-component__subtitle">this text whatever</h6> 
+                    주석처리해두고 필요할때 사용하기~!
+                    -->
+                </div>    
+            </div>
+            <div class="user-component__column">
+            </div>
+        </div>
+        <div class="friends-screen__channel">
+            <div class="friends-screen__channel-header">
+                <span>Channel</span>
+                <i class="fa-solid fa-chevron-up fa-xs"></i>
+            </div>
+            <div class="user-component">
+                <!-- 만든거 붙여넣기~! -->
+                <div class="user-component__column">
+                    <img src="https://pbs.twimg.com/profile_images/1541078927325958145/nVMTbjRO_400x400.jpg" 
+                    class="user-component__avatar user-component__avatar--sm" />
+                    <!-- xl지우고 sm으로 바꿔보기~! -->
+                    <div class="user-component__text">
+                        <h4 class="user-component__title user-component__title--not-bold">Channel</h4>
+                        <!-- 글씨크기를 조절하기위해 새로은 modifier 추가~! -->
+                    </div>    
+                </div>
+                <!-- 그리고 Channel과 아래 '2>'를 분리시켜줘야함! -->
+                <div class="user-component__column">
+                    <!-- <span>2 </span>
+                    <i class="fa-solid fa-chevron-right fa-xs"></i> 이부분을 
+                    div 태그 안에 넣어버리면됨! 
+                    원리는.., 직속으로 연결된게 아니라서
+                    flex는 바로 상위부모가 flex여야 사용가능하고 영향을 받느데 이 "2>"
+                    바로위 부모는 div가 되었기 때문에 영향을 XX 는것 같음!! -->
+                    <div>
+                        <span>2 </span>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- 1.네비게이션바 만들기~! -->
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__but">
+                <a class="nav__link" href="friends.html"><i class="fa-solid fa-user fa-2x"></i></a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="chats.html">
+                    <span class="nav__notification badge">1</span>
+                    <i class="fa-regular fa-comment fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="find.html"><i class="fa-solid fa-magnifying-glass fa-2x"></i></a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="more.html">
+                    <div class="nav__newdot sbadge"></div>
+                    <i class="fa-solid fa-ellipsis fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="splash-screen">
+        <i class="fa-solid fa-comment fa-2x"></i>
+
+    </div>
+
+    <div id="no-mobile">
+        <span>Your screen is too  big 😂</span>
+    </div>
+ <script src="https://kit.fontawesome.com/04df4da1bd.js" crossorigin="anonymous"></script>
+</body>
+</html>

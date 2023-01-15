@@ -1,0 +1,45 @@
+.alt-header {
+    padding: var(--horizontal-space);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alt-header__title {
+    font-size:  28px;
+    font-weight: 600;
+}
+.alt-header__column{
+    width: 33%;/*이꿀팁은 알쥐~!*/
+}
+.alt-header__column:first-child {
+    margin-right: auto;
+    /*
+    margin: 0px auto;
+    이거 어디서 나온 마법의 문구임?
+
+    일단 니꼬영상 빠르게 복습중인데 6.11까진X
+    */
+}
+/*꿀팁겸 정리하면서 세컨드 차일드도 만들어주기*/
+.alt-header__column:nth-child(2){
+    text-align: center;
+/*
+absolute를 이용해서 정중앙에 오게하는건 치트키임 좀 이상한일임
+(에.. 그런거 언제 사용함?)
+
+그래서 대신에 모든 열이 같은 너비를 찾이함~! 이렇게~!
+모두 33% 가지고, 가운데 열은 중앙정렬했으며 마지막열은 flex-end로 함!
+딱 중앙으로만듬 개싱기방기~
+
+*/
+}
+.alt-header__column:last-child{
+    margin-left: auto;
+    /*요기요기도~!*/
+    display: flex;
+    justify-content: flex-end;
+}
+.alt-header__column span:last-child {
+    margin-left: 20px;
+}

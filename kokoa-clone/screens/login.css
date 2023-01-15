@@ -1,0 +1,150 @@
+/*.status-bar {
+    display: flex;
+    /* justify-content: space-between;
+
+    잘보 보면 'no service' 부분이 커서 시계가 정중아잉아님 (화면 팍줄이니보임)
+    justify-content: space-between;도 좋지만 다른 width를 가지고 있기때문에 서로 안맞음
+    원하는 중심에 서지 않음.
+
+    조금 이상하지만 어디서든 써먹을수 있는 css hack(기술)
+    justify-conten 대신 컨테이너 하나를 중심에 놓는 방법임
+    space-between가 아니라 center을 씀!!!
+    그리고 모든 column에 33%의 너비를 가지게 할 것임!
+    */
+    /*justify-content: center;
+}
+.status-bar__column {
+    width: 33%;
+}
+.status-bar__column:first-child span {
+    margin-right: 5px;
+}
+.status-bar__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+.status-bar__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.status-bar__column .fa-battery-half {
+    margin: 0px 6px;
+} */
+/*
+FontAwesome에 아이콘을 크게만드는 class가 있음.
+아무아이콘 클릭하면 사이즈를 볼수 있음.
+html로 가서 'fa-2x'클래스를 추가해보셈!
+*/
+
+/*
+두 번 째시간~!
+
+먼저 body에 우리가 원하든 원하지 안흔 html에 적용된 스타일을 모두 없애고 시작!
+이것을 리셋CSS라고 부름 = 2.0 검색 아주 오래되었고 사용된 것.
+reset.css파일 만들어주기 그리고 
+@import "reset.css"!(맨위에 써야함)
+이렇게 브라우저의 스타일을 없애고 직접 디자인하는 것이 좋은 방법!
+
+파일 분할> 공통으로 들어가는 상태바의 스타일을 따로 분리하기
+stlyes.css에 불러오는 방식으로 다른 css에서도 사용할수 있도록! = @import"";
+
+*/
+
+/*
+header 만들기 단위는 px로하든 %로 하든 상관x!
+크롬에서 이미지를 불러오고 크롬확장 프로그램을 이용해서 문단의 공간너비 알아낼 수 있음
+page rluer redux 확장 프로그램
+*/
+
+.wlecome-header {
+    /*
+    margin-top: 90px;
+    인데, 아래에 text와 log in과 위에 상태바와 title의 공간이 비슷해보이니깐
+    상하, 좌우로 마진을 주는 걸로 바꿈
+    */
+    margin: 90px 0px;
+    text-align: center;
+    /* display : flex; 를쓸수잇지만 h1과 p같은 텍스트를 다루기때문에
+    text-align을 써두됨!!  */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /*속성을 바꾸고나서 정렬하기 교차축을 중심으로 바꿔주고(direction) 
+    교차축을 이용해서 아이템 정렬(align-items)! */
+}
+.wlecome-header__title {
+    margin-bottom: 30px;
+    font-size:  28px;
+    font-weight: bold;
+
+}
+.wlecome-header__text{
+    /* 텍스트 너비 제한 주기 */
+    width: 55%;
+    /* 했을 시, h1과p가 다따로놈 그래서 이것들을 flex로 바꿔줌(부모가는 header에)*/
+    opacity: 0.7;
+    /*글씨 회색으로 만들기~! 투명도 조절로도 가능*/
+}
+
+/**/
+#login-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+}
+#login-form input {
+    border: none;
+    padding: 15px 0px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    /* border-bottom: 1px solid rgb(0,0,0,0.3);
+    transition: border-color 0.2s ease-in-out; 주석처리 이유 not으로 옮김!*/
+
+}
+#login-form input:not([type="submit"]){
+    border-bottom: 1px solid rgb(0,0,0,0.2);
+    /*bottom에 색지정이 있기때문에 fourcus의 색이 덮어짐 그러면XXX*/
+    transition: border-color 0.2s ease-in-out;
+    /*login-form 에서 inpt태그 중 type="submit"이 아닐(not)때만 이것들을 적용한다!*/
+}
+/*위치옮김 08.09 왜냐면 여기 위치가 다르다는걸 알았거든 not이 올라옴*/
+#login-form input::placeholder{
+    color: var(--main-text-color);
+    font-weight: 550;
+
+}
+/*
+#login-form input:focus{
+    /*
+    선택시 테두리 라인 안보이게 하는 속성은 outline : none!! 이거는
+    여기말고도 다른곳에서 사용해야하니까 그리고 기본적으로 그렇게 됬음 하니까!
+    reset.css에 넣기!
+
+    border-color: var(--yellow);
+    /*log in 버튼에도 border의 선과 효과가 들어감 이를 빼줘야함.
+}
+*/
+/*이때 사용하는 것이 CSS not!= 어떤효과가 정용되지 않을때! 얘빼고해! 라고 알려주는..!*/
+
+#login-form input:focus{
+    /*그래서 이게 아래에 있어야 variables.css파일을 받아적용*/
+    border-color: var(--yellow);
+    
+}
+#login-form input[type="submit"]{
+    background-color: var(--yellow);
+    cursor: pointer;
+    /* cursor은 마우스 커서 형태 not-allowed = 금지  progress = 로딩중*/
+    padding: 18px 0px;
+    border-radius: 5px;
+}
+#login-form a {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    /*inherit은! 부모로부터 색상을 물려 받는 것임! 상속(inheritance) 속성!*/
+    font-size: 13px;
+
+}

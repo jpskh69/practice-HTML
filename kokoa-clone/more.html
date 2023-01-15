@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>More - kokoa clone</title>
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>현재시각</span>
+        </div>
+        <div class="status-bar__column">
+            <span>58%</span>
+            <i class="fa-solid fa-battery-half fa-lg" ></i>
+            <!-- battery Icon -->
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <!-- Lightning Icon -->
+        </div>     
+    </div>
+    <header class="screen-header">
+        <h1 class="screen-header__title">More</h1>
+        <div class="screen-header__icons">
+            <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+            <span><i class="fa-solid fa-music fa-lg"></i></span>
+            <span><a href="settings.html"><i class="fa-solid fa-gear fa-lg"></i><div class="find_ndot sbadge"></div></a></span>
+
+        </div>
+    </header>
+    <main class="main-screen more-screen">
+        <div class="user-component">
+            <div class="user-component__column">
+                <img src="https://pbs.twimg.com/profile_images/1416739400067604481/k-P-KiAV_400x400.jpg" 
+                class="user-component__avatar user-component__avatar--xl" />
+                <div class="user-component__text">
+                    <h4 class="user-component__title">everyone</h4>
+                    <h6 class="user-component__subtitle">+72 01 7777 8888 <i class="fa-solid fa-circle-exclamation"></i></h6>
+                </div>
+            </div>
+            <div class="user-component__column">
+                <i class="fa-regular fa-message fa-2x"></i>
+                </div>
+        </div>
+            <!-- 또 아이콘들이 나오네 뭐가 그러면 뭘하쥐~! 바로 component 만들시간! -->
+        <div class="icon-row">
+            <!-- 
+            와 진짜 대박! class를 사용해서 component를 만드는게 개 편리하다!!!
+            니꼬가 제발 좀 알아달라고 하는 이유가 있네
+            -->
+            <div class="icon-row__icon">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Calender</span>
+            </div>
+            <div class="icon-row__icon">
+                <i class="fa-regular fa-face-grin"></i>
+                <span>Emotions</span>
+            </div>
+            <div class="icon-row__icon">
+                <i class="fa-solid fa-brush"></i>
+                <span>Themes</span>
+            </div>
+            <div class="icon-row__icon">
+                <i class="fa-regular fa-comments"></i>
+                <span>Account</span>
+            </div>
+        </div>
+        <div class="more-suggestions">
+            <h4 class="more-suggestions__title">Suggestions</h4>
+            <div class="more-suggestions__icons">
+                <!--하나 더 div!를 만들어서 넣네!1 제길!  또 넣네!-->
+                <div class="more-suggestions__icon">
+                    <div class="more-suggestions__icon-imge">
+                        <i class="fa-solid fa-quote-right"></i>
+                        <!--아이콘-->
+                    </div>
+                    <span class="more-suggestions__icon-text">KoKoa Stroy</span>
+                </div>
+               
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__but">
+                <a class="nav__link" href="friends.html"><i class="far fa-user fa-2x"></i></a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="chats.html">
+                    <span class="nav__notification badge">1</span>
+                    <i class="fa-regular fa-comment fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="find.html">
+                    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="moer.html">
+                    <div class="nav__newdot sbadge"></div>
+                    <i class="fa-solid fa-ellipsis fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="no-mobile">
+        <span>Your screen is too  big 😂</span>
+    </div>
+ <script src="https://kit.fontawesome.com/04df4da1bd.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Find - kokoa clone</title>
+</head>
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>현재시각</span>
+        </div>
+        <div class="status-bar__column">
+            <span>58%</span>
+            <i class="fa-solid fa-battery-half fa-lg" ></i>
+            <!-- battery Icon -->
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <!-- Lightning Icon -->
+        </div>     
+    </div>
+    <header class="screen-header">
+        <h1 class="screen-header__title">Find</h1>
+        <div class="screen-header__icons">
+            <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+            <span>
+                <i class="fa-solid fa-gear fa-lg"><div class="find_ndot sbadge"></div></i></span>
+
+        </div>
+    </header>
+    <main class="main-screen">
+     <!--메인 내용 다 지움! 하지만 기억해야함 main-screen 클래스는 그대로 이용 할 것임!!!
+    이유는 padding: var(--horizontal-space); 이 존재하기때문임!!-->
+    <div class="icon-row">
+        <!-- + 추가 원래 find-icons 엿으나! compoenet로 빠져서 이름 변경됨! 
+            main-icons__icon이라는 클래스를 가진 span을 4 개만들어바 단축키로!-->
+        <div class="icon-row__icon">
+            <i class="fa-solid fa-qrcode"></i>
+            <span>QR Code</span>
+        </div>
+        <div class="icon-row__icon">
+            <i class="fa-regular fa-address-book"></i>
+            <span>Add by Contacts</span>
+        </div>
+        <div class="icon-row__icon">
+            <i class="fa-solid fa-fingerprint"></i>
+            <span>Add by ID</span>
+        </div>
+        <div class="icon-row__icon">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Invite</span>
+        </div>
+    </div>
+    <div class="recommended-friends">
+        <h6 class="recommended-friends__title">Reommended Friends</h6>
+        <span>You have no recommended friends.</span>
+    </div>
+    <div class="open-chat">
+        <div class="open-chat__header">
+            <h4 class="open-chat__title">Open Chat</h4>
+            <span>Go to Openchat Home <i class="fa-solid fa-chevron-right fa-xs"></i></span>
+        </div>
+        <div class="open-post">
+            <!--여기도 두개의 컬럼으로 구성되어있음-->
+            <div class="open-post__column">
+                <h5 class="open-post__title">#SVT</h5>
+                <h6 class="open-post__hashtags">#svt#carat#Horanghe~!</h6>
+                <!-- 이따가 대문자로 만들 것임! 그런데 왜 소문자냐!
+                대문자는 디자인적 요소기때문에 보여지는것 때문에 대문자가 필요하다면
+                HMTL코드에서는 소문자로 작성 -> CSS에서 대문자로 바꿔주면됨! -->
+                <div class="open-post__members">
+                    <img src="https://v-phinf.pstatic.net/20210707_20/1625644394144n6dLi_JPEG/image.JPEG?type=w1000" />
+                    <span class="open-post__members-count">tiger members</span> <!-- / 이렇게 추가해두되긴함-->
+                    <div class="divider"></div>
+                    <!-- divider class가 꼭 필요한 건 아님 연습삼아 만들어보는거임! -->
+                    <span class="open-post__members-status">Active</span>
+                </div>
+            </div>
+            <div class="open-post__column">
+                <div class="open-post__photo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5xq1Zq8_xx79RUnCq1Bu_7Ss_d2kbxg2wuAf8PFL9IllJfs2UK6QK9p-qkWh3R13FT5U&usqp=CAU" />
+                    <div class="open-post__heart-count">
+                        <i class="fa-solid fa-heart fa-xs"></i><span>326</span>
+                    </div>
+                </div>
+                <!-- <div class="open-post__heart-count">
+                    <i class="fa-solid fa-heart fa-xs"></i><span>326</span>
+                </div>위치 잘못됫다 ㅋ photo안에 있어야함 -->
+            </div>
+        </div>
+        <div class="open-post">
+            <div class="open-post__column">
+                <h5 class="open-post__title">#SVT</h5>
+                <h6 class="open-post__hashtags">#svt#carat#jenghan</h6>
+                <div class="open-post__members">
+                    <img src="https://i.pinimg.com/564x/24/57/7e/24577e1ac800dcd29038112f1d7886c1.jpg" />
+                    <span class="open-post__members-count">rabbit members</span> <!-- / 이렇게 추가해두되긴함-->
+                    <div class="divider"></div>
+                    <span class="open-post__members-status">Active</span>
+                </div>
+            </div>
+            <div class="open-post__column">
+                <div class="open-post__photo">
+                    <img src="https://cdn.getnews.co.kr/news/photo/201711/37191_34929_1025.jpg" />
+                    <div class="open-post__heart-count">
+                        <i class="fa-solid fa-heart fa-xs"></i><span>659</span>
+                    </div>
+                </div>
+                <!-- <div class="open-post__heart-count">
+                    <i class="fa-solid fa-heart fa-xs"></i><span>326</span>
+                </div>위치 잘못됫다 ㅋ photo안에 있어야함 -->
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__but">
+                <a class="nav__link" href="friends.html"><i class="far fa-user fa-2x"></i></a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="chats.html">
+                    <span class="nav__notification badge">1</span>
+                    <i class="fa-regular fa-comment fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="find.html">
+                    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </a>
+            </li>
+            <li class="nav__but">
+                <a class="nav__link" href="more.html">
+                    <div class="nav__newdot sbadge"></div>
+                    <i class="fa-solid fa-ellipsis fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="no-mobile">
+        <span>Your screen is too  big 😂</span>
+    </div>
+ <script src="https://kit.fontawesome.com/04df4da1bd.js" crossorigin="anonymous"></script>
+</body>
+</html>

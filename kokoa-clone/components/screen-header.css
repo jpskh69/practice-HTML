@@ -1,0 +1,29 @@
+/*잊지마!!이 파일을 사용하려면 총괄 css파일에 import 해줘야함*/
+.screen-header{
+    display: flex;
+    justify-content: space-between; /*h1과 div의 공간정렬*/
+    align-items: center;/*아이템들의 중앙정렬*/
+    padding: var(--horizontal-space); /* 25px;모든 면에 패딩 줌 :: 나중에 variable로 바뀜*/
+    /*margin-bottom: -20px; >이게 추가되서 friense.css에 마이너스(-) 마진이 추가됨*/
+    /* position: relative;
+    top: 15px;  이게아니고  패딩탑을 준다면?*/
+    padding-top: 50px; 
+}
+.screen-header__title {
+    font-size:  32px;
+    font-weight: 600;
+}
+
+/*아이콘들 사이에 공간 존재! 바로바로~ margin임!*/
+.screen-header__icons span {
+    margin-left: 25px;
+}
+
+/*
+이 것으로 우리의 header는 끝!
+그리고 이것을 우리는 다른 스크린에서 아이콘만 바꿔서 사용할수 잇음!
+이거시 바로 class를 사용하여 구성하는 방법의 힘~!
+
+다시사용할수있고 components 폴더에 좀더 조직화(organize) 할 수 있음..(몬소리고?)
+
+*/

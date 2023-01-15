@@ -1,0 +1,166 @@
+
+/* > 이부분은 나중에 more파트에서 동일한 부분이 있기때문에 component로 빠짐!!
+icon-row.css
+
+.find-icons {
+    display: flex;
+    justify-content: space-between;
+     1px solid var(--main-text-color); = 회색선 묘하게 어디에든 
+    등장하니깐 변수(var)로 만들어서 사용하기!
+
+    이렇게 코드가 반복된다면  변수를 만드는 것이 좋음! 똑같은 코드를 쓰지 않도록!
+
+    border-bottom: var(--gery-border); > recommended-friends로 옮김!
+    padding: 25px; >이부분도 위아래 똑같이 적용되서
+    
+}
+.find-icons__icon {
+    display: flex;
+    flex-direction: column;
+    row = 옆으로 배치, column = 다음줄에 배치! 그리고 주축기준이 변경됨!
+    align-items: center;
+}
+.find-icons__icon i {
+    font-size: 30px;
+    이렇게 폰트 사이즈로도 사이즈를 조절할수 있음..! 와 개신기함!
+}
+.find-icons__icon span {
+    margin-top: 25px;
+}*/
+
+.find_ndot {
+    position: relative;
+    left: 145px;
+    bottom: 25px;
+}
+
+.recommended-friends {
+    margin :25px 0px;
+    padding: 25px 0px;
+    border-top: var(--gery-border);
+    border-bottom: var(--gery-border);
+}
+.recommended-friends__title {
+    font-size: 15px;
+    color: var(--main-text-color); 
+    /* 이쯤되면 회색의 변수를 만드는 것도 좋을것 같지 않음? */
+}
+.recommended-friends span {
+    margin: 80px 0px;
+    display: block;
+    text-align: center;
+    color: var(--main-text-color);
+    font-size: 18px;
+}
+.open-chat__header {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.8;
+    /* opacity를 사용하는 이유는 그냥 귀찮아서래 ㅋㅋ color로 해두됨 */
+    font-size: 14px;
+    margin-bottom: 25px 0px;
+}
+.open-chat__header span {
+    opacity: 0.6;
+}
+
+.open-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*위에 이 두개는 엄청엄청 자주쓰이는 조합임!*/
+    border-bottom: var(--gery-border);
+    padding:20px 0px;
+}
+.open-post__title {
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.open-post__hashtags {
+    text-transform: uppercase;
+    /*이게 대문자 만드는 속성 인가봄*/
+    opacity: 0.6;
+}
+.open-post__members{
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+}
+.open-post__members img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.open-post__members-count {
+    opacity: 0.5;
+    font-size: 14px;
+}
+.open-post__members .divider {
+    /* 이렇게 작성하는 이유는 코드상에 다른 divider가 있을수도 있은까
+    하지만 이렇게 하면 pen-post__members안에 있는 divider에만 적용 됨
+    먼소리고 했느데 아 그 선택자... 그거임 속에 속에 */
+    width: 2px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    
+}
+.open-post__members-status {
+    color: #ffb0e0;
+}
+.open-post__photo {
+    position: relative;
+}
+.open-post__photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    /* open-post가 flex라서 두개의 큰 column이 나란히 되어있음!
+    그래서 뭐하나를 추가해주면됨~! 먼지알지? 0.< */
+}
+
+.open-post__heart-count {
+    /* width: 40px; 아래 position: absolute;하니깐 사이즈 줄여짐 왜지?*/
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 15px;
+    padding: 6px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    /*그럼 이걸 이미지위에 어떻게 올릴까? 맞아!! position임!!!!!!1*/
+    position: absolute;
+    /*근데 이상태로 값을 주면 얘가 기준이되는 position: relative; 부모를 찾으려고함!
+    이경우 open-post__photo가 되면 됨!
+    
+    잊자마!!!(난 잊어버렷음 ㅋ)
+    absolute childern은 relative father가 꼭 필요함!!
+    */
+    bottom: 10px;
+    right: 10px;
+    /*왜 안돼나 했더니 html에 photo에 포함이 안되어있어서그랬네 */
+}
+.open-post__heart-count span {
+    margin-left: 5px;
+}
+@keyframes hearthBeat{
+    0%{
+        color: white;
+        transform: none;
+    }
+    50%{
+        color: tomato;
+        transform: scale(1.5);
+        /*will-change 속성은 기본적으로 브라우저에게 뭔가 바뀔 거라고 말해줌! 그게다임! 하지만 더 나은 애니메이션을 만들어줌!*/
+    }
+    100%{
+        color: white;
+        transform: none;
+
+    }
+}
+.open-post__heart-count:hover i {
+    will-change: transform;
+    animation: hearthBeat 0.6s ease-in infinite;
+}

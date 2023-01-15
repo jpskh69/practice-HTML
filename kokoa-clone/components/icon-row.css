@@ -1,0 +1,35 @@
+.icon-row {
+    display: flex;
+    justify-content: space-between;
+    /* 1px solid var(--main-text-color); = 회색선 묘하게 어디에든 
+    등장하니깐 변수(var)로 만들어서 사용하기!
+
+    이렇게 코드가 반복된다면  변수를 만드는 것이 좋음! 똑같은 코드를 쓰지 않도록!
+
+    border-bottom: var(--gery-border); > recommended-friends로 옮김!
+    padding: 25px; >이부분도 위아래 똑같이 적용되서
+    */
+}
+.icon-row__icon {
+    display: flex;
+    flex-direction: column;
+    /*row = 옆으로 배치, column = 다음줄에 배치! 그리고 주축기준이 변경됨!*/
+    align-items: center;
+}
+.icon-row__icon i {
+    font-size: 30px;
+    /*이렇게 폰트 사이즈로도 사이즈를 조절할수 있음..! 와 개신기함!*/
+}
+.icon-row__icon span {
+    margin-top: 25px;
+}
+/* 문제가 생김 
+user-component에 마진을 넣으면 다른곳에서도 적용됨
+하지만 우린 more에서만 마진을 넣고싶음! 왜냐 나머지는 잘되어있기때문에!
+한 곳수정하면 다 수정됨! 그러니 유의해야함! 
+
+팁을 주자면! 아주사소한 커스터마이징을 위해 다른 스크린파일을 만드는거임!
+more.css!!!
+
+
+*/
